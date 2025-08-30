@@ -1,0 +1,5 @@
+75483926;Carlos;Ramirez;cramirez;admin123;ADMIN
+62841597;Lucia;Fernandez;lfernandez;secure456;ADMIN
+71283078;ghgfh;erwtwet;aaron123;789;USUARIO
+71283071;waeaw;reerw;mmm;vvvv;USUARIO
+71282078;weqrtew;rewtyert;prueba;456;USUARIO

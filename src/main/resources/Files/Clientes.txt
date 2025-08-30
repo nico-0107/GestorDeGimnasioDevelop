@@ -9,7 +9,7 @@
 75062805,Lucia Sofia,Lopez Gonzalez,22 ago 2024,21 sept 2024,Mensual
 76424418,Maria Beatriz,Gonzalez Diaz,14 sept 2023,14 oct 2023,Mensual
 77619891,Carmen Joaquin,Perez Diaz,21 sept 2024,20 dic 2024,Trimestral
-76631450,Miguel Andres,Perez Diaz,18 feb 2023,19 may 2023,Trimestral
+76631450,Miguel Andres,Perez Diaz,28 ago 2025,28 sept 2025,Mensual
 72128392,Carmen Alejandra,Lopez Diaz,17 dic 2024,17 mar 2025,Trimestral
 71341735,Lucia Joaquin,Gonzalez Rodriguez,24 mar 2024,23 abr 2024,Mensual
 73560257,Ana Joaquin,Diaz Perez,23 ago 2024,22 sept 2024,Mensual

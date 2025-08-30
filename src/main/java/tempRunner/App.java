@@ -1,19 +1,17 @@
 package tempRunner;
 
-import Controlador.FrameControlador;
+
+import Vista.InicioVista;
+import Vista.LoginView;
+import Vista.ViewPrincipal;
+
 
 public class App {
 
 	// METODO MAIN PARA INCIAR EL PROGRAMA
 	public static void main(String[] args) {
-
-
-
-		// INSTANCIACION DEL CONTROLADOR MAESTRO
-		FrameControlador frameControlador = new FrameControlador();
-
-		// METODO QUE CARGA EL JFRAME INICIAL (LA VENTANA)
-		frameControlador.iniciar();
-
+            //ViewPrincipal iniciarView= new ViewPrincipal();
+            LoginView lv= new LoginView ();
+            
 	}
 }

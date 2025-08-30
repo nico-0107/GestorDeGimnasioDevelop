@@ -57,13 +57,6 @@ public class UsuariosVista extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        BotonAsistencia = new javax.swing.JButton();
-        BotonUsuarios = new javax.swing.JButton();
-        BotonTrabajadores = new javax.swing.JButton();
-        BotonInicio = new javax.swing.JButton();
-        BotonInventario = new javax.swing.JButton();
         lblUsuarios = new javax.swing.JLabel();
         BotonAñadirUsuarios = new javax.swing.JButton();
         Buscador = new javax.swing.JTextField();
@@ -72,105 +65,12 @@ public class UsuariosVista extends javax.swing.JPanel {
         TablaClientes = new javax.swing.JTable();
         BotonRenovarUsuarios = new javax.swing.JButton();
 
-        setPreferredSize(new java.awt.Dimension(1140, 640));
-
-        jPanel1.setBackground(new java.awt.Color(49, 64, 81));
-
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/LogoNombre.png"))); // NOI18N
-
-        BotonAsistencia.setBackground(new java.awt.Color(49, 64, 81));
-        BotonAsistencia.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        BotonAsistencia.setForeground(new java.awt.Color(255, 255, 255));
-        BotonAsistencia.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Asistance.png"))); // NOI18N
-        BotonAsistencia.setText("Asistencia");
-        BotonAsistencia.setFocusPainted(false);
-        BotonAsistencia.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BotonAsistenciaActionPerformed(evt);
-            }
-        });
-
-        BotonUsuarios.setBackground(new java.awt.Color(41, 56, 70));
-        BotonUsuarios.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        BotonUsuarios.setForeground(new java.awt.Color(255, 255, 255));
-        BotonUsuarios.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Users.png"))); // NOI18N
-        BotonUsuarios.setText("Usuarios");
-        BotonUsuarios.setFocusPainted(false);
-        BotonUsuarios.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BotonUsuariosActionPerformed(evt);
-            }
-        });
-
-        BotonTrabajadores.setBackground(new java.awt.Color(49, 64, 81));
-        BotonTrabajadores.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        BotonTrabajadores.setForeground(new java.awt.Color(255, 255, 255));
-        BotonTrabajadores.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Workers.png"))); // NOI18N
-        BotonTrabajadores.setText("Trabajadores");
-        BotonTrabajadores.setFocusPainted(false);
-        BotonTrabajadores.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BotonTrabajadoresActionPerformed(evt);
-            }
-        });
-
-        BotonInicio.setBackground(new java.awt.Color(49, 64, 81));
-        BotonInicio.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        BotonInicio.setForeground(new java.awt.Color(255, 255, 255));
-        BotonInicio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Home.png"))); // NOI18N
-        BotonInicio.setText("Inicio");
-        BotonInicio.setFocusPainted(false);
-
-        BotonInventario.setBackground(new java.awt.Color(49, 64, 81));
-        BotonInventario.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        BotonInventario.setForeground(new java.awt.Color(255, 255, 255));
-        BotonInventario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Workers.png"))); // NOI18N
-        BotonInventario.setText("Inventario");
-        BotonInventario.setFocusPainted(false);
-        BotonInventario.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BotonInventarioActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(11, 11, 11)
-                .addComponent(jLabel1)
-                .addContainerGap(14, Short.MAX_VALUE))
-            .addComponent(BotonUsuarios, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(BotonTrabajadores, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(BotonInicio, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(BotonInventario, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(BotonAsistencia, javax.swing.GroupLayout.DEFAULT_SIZE, 302, Short.MAX_VALUE))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(21, 21, 21)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(48, 48, 48)
-                .addComponent(BotonInicio, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(107, 107, 107)
-                .addComponent(BotonUsuarios, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(BotonTrabajadores, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(BotonInventario, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel1Layout.createSequentialGroup()
-                    .addGap(247, 247, 247)
-                    .addComponent(BotonAsistencia, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(333, Short.MAX_VALUE)))
-        );
+        setPreferredSize(new java.awt.Dimension(836, 680));
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lblUsuarios.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         lblUsuarios.setText("Usuarios del Gimnasio");
+        add(lblUsuarios, new org.netbeans.lib.awtextra.AbsoluteConstraints(35, 31, -1, -1));
 
         BotonAñadirUsuarios.setText("AÑADIR USUARIOS");
         BotonAñadirUsuarios.setFocusPainted(false);
@@ -179,14 +79,17 @@ public class UsuariosVista extends javax.swing.JPanel {
                 BotonAñadirUsuariosActionPerformed(evt);
             }
         });
+        add(BotonAñadirUsuarios, new org.netbeans.lib.awtextra.AbsoluteConstraints(35, 76, 143, 31));
 
         Buscador.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BuscadorActionPerformed(evt);
             }
         });
+        add(Buscador, new org.netbeans.lib.awtextra.AbsoluteConstraints(602, 75, 194, 32));
 
         jLabel2.setText("BUSCAR USUARIO POR DNI");
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(436, 83, -1, -1));
 
         TablaClientes.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         TablaClientes.setModel(new javax.swing.table.DefaultTableModel(
@@ -253,7 +156,6 @@ public class UsuariosVista extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
-        TablaClientes.setShowVerticalLines(true);
         TablaClientes.getTableHeader().setReorderingAllowed(false);
         jScrollPane1.setViewportView(TablaClientes);
         if (TablaClientes.getColumnModel().getColumnCount() > 0) {
@@ -266,6 +168,8 @@ public class UsuariosVista extends javax.swing.JPanel {
             TablaClientes.getColumnModel().getColumn(6).setResizable(false);
         }
 
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(35, 125, 761, 459));
+
         BotonRenovarUsuarios.setText("RENOVAR USUARIOS");
         BotonRenovarUsuarios.setFocusPainted(false);
         BotonRenovarUsuarios.addActionListener(new java.awt.event.ActionListener() {
@@ -273,47 +177,7 @@ public class UsuariosVista extends javax.swing.JPanel {
                 BotonRenovarUsuariosActionPerformed(evt);
             }
         });
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(lblUsuarios)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(BotonAñadirUsuarios, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(BotonRenovarUsuarios, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(24, 24, 24)
-                                .addComponent(jLabel2)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Buscador))
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 783, Short.MAX_VALUE))
-                        .addGap(37, 37, 37))))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(15, 15, 15)
-                .addComponent(lblUsuarios)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(BotonAñadirUsuarios, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Buscador, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2)
-                    .addComponent(BotonRenovarUsuarios, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 459, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(66, Short.MAX_VALUE))
-        );
+        add(BotonRenovarUsuarios, new org.netbeans.lib.awtextra.AbsoluteConstraints(196, 76, 166, 31));
     }// </editor-fold>//GEN-END:initComponents
     private void cargarClientesDesdeArchivo() {
         String archivoClientes = "src/main/resources/Files/Clientes.txt";
@@ -449,36 +313,13 @@ public class UsuariosVista extends javax.swing.JPanel {
     }
     }//GEN-LAST:event_BotonRenovarUsuariosActionPerformed
 
-    private void BotonAsistenciaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonAsistenciaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_BotonAsistenciaActionPerformed
-
-    private void BotonUsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonUsuariosActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_BotonUsuariosActionPerformed
-
-    private void BotonTrabajadoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonTrabajadoresActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_BotonTrabajadoresActionPerformed
-
-    private void BotonInventarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonInventarioActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_BotonInventarioActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public javax.swing.JButton BotonAsistencia;
     public javax.swing.JButton BotonAñadirUsuarios;
-    public javax.swing.JButton BotonInicio;
-    public javax.swing.JButton BotonInventario;
     public javax.swing.JButton BotonRenovarUsuarios;
-    public javax.swing.JButton BotonTrabajadores;
-    public javax.swing.JButton BotonUsuarios;
     protected javax.swing.JTextField Buscador;
     public javax.swing.JTable TablaClientes;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblUsuarios;
     // End of variables declaration//GEN-END:variables

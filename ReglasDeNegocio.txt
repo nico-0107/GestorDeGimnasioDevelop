@@ -1,0 +1,5 @@
+- los usuario nromales les saldra un jpanel donde solo salgan las membresias del gym 
+- los usuarios q son socios recien se les mostrara infomacion relevante donde su pagos, adeudo,
+perfil, rutinas, asistencias
+- el admin configura los usuarios normales para darle una membresia y recien ahi son socios
+-
