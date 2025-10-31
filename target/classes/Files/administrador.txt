@@ -1,0 +1,3 @@
+71283065;dfdgf;hhnn;useraaron;bbbb;ADMIN
+71283014;ADMIN_kevin;Mendoza;kevin1;eee;ADMIN
+71283078;ADMIN_aaron;Bejar_Mallma;aaron123;pass123;ADMIN

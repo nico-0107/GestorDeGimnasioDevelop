@@ -6,6 +6,8 @@ package Vista;
 
 import Modelo.Usuario;
 import Modelo.UsuarioDAO;
+import javax.swing.ImageIcon;
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
 /**
@@ -19,8 +21,9 @@ public class RegistrarUserView extends javax.swing.JFrame {
      */
     public RegistrarUserView() {
         initComponents();
-        this.setVisible(true);
         this.setLocationRelativeTo(null);
+        this.setIconImage(new ImageIcon(getClass().getResource("/Images/logopequeño.jpg")).getImage());
+        this.setTitle("Gestión Gym Esparta");
     }
 
     /**
@@ -50,8 +53,9 @@ public class RegistrarUserView extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
         txtUserRegister = new javax.swing.JTextField();
         jSeparator5 = new javax.swing.JSeparator();
-        jPanel2 = new javax.swing.JPanel();
+        volverRegister = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
+        jSeparator6 = new javax.swing.JSeparator();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -60,171 +64,115 @@ public class RegistrarUserView extends javax.swing.JFrame {
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 60, -1, -1));
 
-        btnRegister.setBackground(new java.awt.Color(49, 64, 81));
+        btnRegister.setBackground(new java.awt.Color(93, 29, 30));
         btnRegister.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
         btnRegister.setForeground(new java.awt.Color(255, 255, 255));
         btnRegister.setText("Registrar");
-        btnRegister.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnRegisterMouseClicked(evt);
-            }
-        });
-        jPanel1.add(btnRegister, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 400, 310, 60));
+        jPanel1.add(btnRegister, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 390, 310, 60));
 
         jLabel4.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(0, 0, 0));
         jLabel4.setText("Nombre");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 90, 84, 31));
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 160, 84, 31));
 
         txtPassRegister.setBackground(new java.awt.Color(245, 245, 245));
         txtPassRegister.setForeground(new java.awt.Color(0, 0, 0));
         txtPassRegister.setBorder(null);
-        jPanel1.add(txtPassRegister, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 330, 310, 36));
+        jPanel1.add(txtPassRegister, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 180, 310, 36));
 
         jLabel6.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(0, 0, 0));
         jLabel6.setText("DNI");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 20, -1, -1));
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 90, -1, -1));
 
         jLabel7.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(0, 0, 0));
         jLabel7.setText("Contraseña");
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 310, -1, -1));
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 160, -1, -1));
 
         jLabel8.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(0, 0, 0));
         jLabel8.setText("Apellidos");
-        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 170, -1, -1));
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 240, -1, -1));
 
-        jSeparator1.setBackground(new java.awt.Color(49, 64, 81));
-        jSeparator1.setForeground(new java.awt.Color(76, 69, 121));
-        jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 370, 310, 30));
+        jSeparator1.setBackground(new java.awt.Color(93, 29, 30));
+        jSeparator1.setForeground(new java.awt.Color(93, 29, 30));
+        jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 220, 310, 30));
 
         txtNombreRegister.setBackground(new java.awt.Color(245, 245, 245));
         txtNombreRegister.setForeground(new java.awt.Color(0, 0, 0));
         txtNombreRegister.setBorder(null);
-        jPanel1.add(txtNombreRegister, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 120, 310, 36));
+        jPanel1.add(txtNombreRegister, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 190, 310, 30));
 
-        jSeparator2.setBackground(new java.awt.Color(49, 64, 81));
-        jSeparator2.setForeground(new java.awt.Color(49, 64, 81));
-        jPanel1.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 80, 310, 30));
+        jSeparator2.setBackground(new java.awt.Color(93, 29, 30));
+        jSeparator2.setForeground(new java.awt.Color(93, 29, 30));
+        jPanel1.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 150, 310, 30));
 
         txtApeRegister.setBackground(new java.awt.Color(245, 245, 245));
         txtApeRegister.setForeground(new java.awt.Color(0, 0, 0));
         txtApeRegister.setBorder(null);
-        jPanel1.add(txtApeRegister, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 190, 310, 36));
+        jPanel1.add(txtApeRegister, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 260, 310, 36));
 
-        jSeparator3.setBackground(new java.awt.Color(49, 64, 81));
-        jSeparator3.setForeground(new java.awt.Color(49, 64, 81));
-        jPanel1.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 160, 310, 30));
+        jSeparator3.setBackground(new java.awt.Color(93, 29, 30));
+        jSeparator3.setForeground(new java.awt.Color(93, 29, 30));
+        jPanel1.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 220, 310, 30));
 
         txtDniRegister.setBackground(new java.awt.Color(245, 245, 245));
         txtDniRegister.setForeground(new java.awt.Color(0, 0, 0));
         txtDniRegister.setBorder(null);
-        jPanel1.add(txtDniRegister, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 40, 310, 36));
+        jPanel1.add(txtDniRegister, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 110, 310, 36));
 
-        jSeparator4.setBackground(new java.awt.Color(49, 64, 81));
-        jSeparator4.setForeground(new java.awt.Color(76, 69, 121));
-        jPanel1.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 230, 310, 30));
+        jSeparator4.setBackground(new java.awt.Color(93, 29, 30));
+        jSeparator4.setForeground(new java.awt.Color(93, 29, 30));
+        jPanel1.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 300, 310, 10));
 
         jLabel9.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(0, 0, 0));
         jLabel9.setText("Usuario");
-        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 240, -1, -1));
+        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 90, -1, -1));
 
         txtUserRegister.setBackground(new java.awt.Color(245, 245, 245));
         txtUserRegister.setForeground(new java.awt.Color(0, 0, 0));
         txtUserRegister.setBorder(null);
-        jPanel1.add(txtUserRegister, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 260, 310, 36));
+        jPanel1.add(txtUserRegister, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 110, 310, 36));
 
-        jSeparator5.setBackground(new java.awt.Color(49, 64, 81));
-        jSeparator5.setForeground(new java.awt.Color(76, 69, 121));
-        jPanel1.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 300, 310, 30));
+        jSeparator5.setBackground(new java.awt.Color(93, 29, 30));
+        jSeparator5.setForeground(new java.awt.Color(93, 29, 30));
+        jSeparator5.setOrientation(javax.swing.SwingConstants.VERTICAL);
+        jPanel1.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 90, 10, 280));
 
-        jPanel2.setBackground(new java.awt.Color(49, 64, 81));
+        volverRegister.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        volverRegister.setText("X");
+        jPanel1.add(volverRegister, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 0, 46, 49));
 
+        jLabel5.setBackground(new java.awt.Color(93, 29, 30));
         jLabel5.setFont(new java.awt.Font("Century Gothic", 1, 36)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel5.setForeground(new java.awt.Color(93, 29, 30));
         jLabel5.setText("REGISTER");
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 20, -1, -1));
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(113, 113, 113)
-                .addComponent(jLabel5)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(122, Short.MAX_VALUE)
-                .addComponent(jLabel5)
-                .addGap(30, 30, 30))
-        );
+        jSeparator6.setBackground(new java.awt.Color(93, 29, 30));
+        jSeparator6.setForeground(new java.awt.Color(93, 29, 30));
+        jPanel1.add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 150, 310, 30));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 390, Short.MAX_VALUE)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 816, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 486, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 489, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
     
-    void limpiar(){
+    public void limpiar(){
         txtUserRegister.setText("");
         txtPassRegister.setText("");
     }
-    private void btnRegisterMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnRegisterMouseClicked
-    
-        UsuarioDAO listaUser = UsuarioDAO.getInstancia();
-        
-        try{
-            String inputDni = txtDniRegister.getText().trim();
-            String inputNom = txtNombreRegister.getText();
-            String inputApe = txtApeRegister.getText();
-            String user = txtUserRegister.getText().trim();
-            String pass= txtPassRegister.getText().trim();
-            
-            if (inputDni.isEmpty() || inputNom.isEmpty()||inputApe.isEmpty()||user.isEmpty()||pass.isEmpty()) {
-                throw new Exception("⚠️ Los campos no pueden estar vacíos."); // se va la catch para lanzar la exception
-            }
-            
-            if (inputDni.length() != 8) {
-                throw new Exception("DNI no valido"); // se va la catch para lanzar la exception
-            }
-            
-            if (!listaUser.buscarDni(inputDni)) {
-                throw new Exception("El DNI ya está registrado.");
-            }
-            
-            boolean verificarUser  = listaUser.registrarUsuario(inputDni,inputNom, inputApe, user, pass, "USUARIO");
-            if(verificarUser){
-                JOptionPane.showMessageDialog(this, "Usuario Registrado exitosamente");
-                this.dispose();
-            } else {
-                limpiar();
-                throw new Exception("Usuario ya existe, pruebe con otro!");
-            }
-        }catch(Exception e) {
-            JOptionPane.showMessageDialog(this, e.getMessage(), "Error de login", JOptionPane.ERROR_MESSAGE);
-        }
-    }//GEN-LAST:event_btnRegisterMouseClicked
-
     /**
      * @param args the command line arguments
      */
@@ -270,16 +218,17 @@ public class RegistrarUserView extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JSeparator jSeparator4;
     private javax.swing.JSeparator jSeparator5;
+    private javax.swing.JSeparator jSeparator6;
     public javax.swing.JTextField txtApeRegister;
     public javax.swing.JTextField txtDniRegister;
     public javax.swing.JTextField txtNombreRegister;
     public javax.swing.JTextField txtPassRegister;
     public javax.swing.JTextField txtUserRegister;
+    public javax.swing.JButton volverRegister;
     // End of variables declaration//GEN-END:variables
 }

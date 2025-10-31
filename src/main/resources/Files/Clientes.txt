@@ -1,5 +1,5 @@
 72189012,Ivan Joaquin,Nuñez Cardenas,05 nov 2024,05 nov 2025,Anual
-76739775,Joshua Nicolas,Chavez Cerna,05 nov 2024,05 feb 2025,Trimestral
+76739775,Joshua Nicolas,Chavez Cerna,16 sept 2025,16 oct 2025,Mensual
 71212195,Jim Bryan,Segovia Valencia,05 nov 2024,05 dic 2024,Mensual
 79292334,Maria Beatriz,Gonzalez Perez,06 nov 2024,06 nov 2025,Anual
 78405358,Carmen Sofia,Sanchez Rodriguez,15 jul 2024,13 oct 2024,Trimestral

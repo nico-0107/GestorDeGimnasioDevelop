@@ -19,7 +19,7 @@ import java.util.List;
 public class UsuarioDAO {
     
     private static UsuarioDAO instancia; // Singleton
-    private static final String FILE_NAME = "src/main/resources/Files/usuarios.txt";
+    private static final String FILE_NAME = "src/main/resources/Files/administrador.txt";
     private List<Usuario> usuarios;
 
     // Constructor privado
@@ -75,6 +75,15 @@ public class UsuarioDAO {
         return null;
     }
     
+    public Usuario buscarUsuarioPorDNI(String dni) {
+        for (Usuario u : usuarios) {
+            if (u.getDNI().equals(dni)) {
+               return u;
+            }
+        }
+        return null;
+    }
+    
     public boolean buscarDni(String dni) {
         for (Usuario u : usuarios) {
             if (u.getDNI().equals(dni)) {
@@ -104,6 +113,18 @@ public class UsuarioDAO {
         }
         return false;
     }
+    
+    public boolean modificarUsuarioConDNI(String dni, String nom, String ape, String user, String pass, String rol) {
+        Usuario u = buscarUsuarioPorDNI(dni); // 👈 cambio aquí
+        if (u != null) {
+            usuarios.remove(u);
+            usuarios.add(new Usuario(dni, nom, ape, user, pass, rol));
+            guardarUsuarios();
+            return true;
+        }
+        return false;
+    }
+
 
     public boolean eliminarUsuario(int fila) {
         return false;
@@ -112,6 +133,7 @@ public class UsuarioDAO {
     public Usuario login(String username, String password) {
         for (Usuario u : usuarios) {
             if (u.getUser().equals(username) && u.getPass().equals(password)) {
+                
                return u; // login correcto
             }
         }

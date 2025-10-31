@@ -26,12 +26,8 @@ public class ViewPrincipal extends javax.swing.JFrame {
     public ViewPrincipal() {
         initComponents();
         this.setLocationRelativeTo(null);
-        this.setIconImage(new ImageIcon(getClass().getResource("/Images/GGV.png")).getImage());
-        this.setTitle("Gestión Gym Aura");
-        this.setVisible(true);
-        
-        InicioVista inicio= new InicioVista();
-        abrirPaneles(inicio);
+        this.setIconImage(new ImageIcon(getClass().getResource("/Images/logopequeño.jpg")).getImage());
+        this.setTitle("Gestión Gym Esparta");
         
     }
 
@@ -41,104 +37,152 @@ public class ViewPrincipal extends javax.swing.JFrame {
     private void initComponents() {
 
         sidebarMenu = new javax.swing.JPanel();
-        BotonInventario = new javax.swing.JButton();
-        BotonTrabajadores = new javax.swing.JButton();
-        BotonUsuarios = new javax.swing.JButton();
-        BotonAsistencia = new javax.swing.JButton();
-        BotonInicio = new javax.swing.JButton();
+        btnInventario = new javax.swing.JButton();
+        btnTrabajadores = new javax.swing.JButton();
+        btnSocios = new javax.swing.JButton();
+        btnAsistencias = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+        btnInicio = new javax.swing.JButton();
+        btnMembresias = new javax.swing.JButton();
+        btnCerrarSesion = new javax.swing.JButton();
         content = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        sidebarMenu.setBackground(new java.awt.Color(49, 64, 81));
+        sidebarMenu.setBackground(new java.awt.Color(93, 29, 30));
         sidebarMenu.setPreferredSize(new java.awt.Dimension(294, 680));
         sidebarMenu.setRequestFocusEnabled(false);
         sidebarMenu.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        BotonInventario.setBackground(new java.awt.Color(49, 64, 81));
-        BotonInventario.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        BotonInventario.setForeground(new java.awt.Color(255, 255, 255));
-        BotonInventario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Workers.png"))); // NOI18N
-        BotonInventario.setText("Inventario");
-        BotonInventario.setFocusPainted(false);
-        BotonInventario.addMouseListener(new java.awt.event.MouseAdapter() {
+        btnInventario.setBackground(new java.awt.Color(93, 29, 30));
+        btnInventario.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        btnInventario.setForeground(new java.awt.Color(255, 255, 255));
+        btnInventario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Workers.png"))); // NOI18N
+        btnInventario.setText("Inventario");
+        btnInventario.setBorderPainted(false);
+        btnInventario.setFocusPainted(false);
+        btnInventario.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        btnInventario.setIconTextGap(20);
+        btnInventario.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                BotonInventarioMouseClicked(evt);
+                btnInventarioMouseClicked(evt);
             }
         });
-        BotonInventario.addActionListener(new java.awt.event.ActionListener() {
+        btnInventario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BotonInventarioActionPerformed(evt);
+                btnInventarioActionPerformed(evt);
             }
         });
-        sidebarMenu.add(BotonInventario, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 300, 300, 50));
+        sidebarMenu.add(btnInventario, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 300, 300, 50));
 
-        BotonTrabajadores.setBackground(new java.awt.Color(49, 64, 81));
-        BotonTrabajadores.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        BotonTrabajadores.setForeground(new java.awt.Color(255, 255, 255));
-        BotonTrabajadores.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Workers.png"))); // NOI18N
-        BotonTrabajadores.setText("Trabajadores");
-        BotonTrabajadores.setFocusPainted(false);
-        BotonTrabajadores.addMouseListener(new java.awt.event.MouseAdapter() {
+        btnTrabajadores.setBackground(new java.awt.Color(93, 29, 30));
+        btnTrabajadores.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        btnTrabajadores.setForeground(new java.awt.Color(255, 255, 255));
+        btnTrabajadores.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Users.png"))); // NOI18N
+        btnTrabajadores.setText("Trabajadores");
+        btnTrabajadores.setBorderPainted(false);
+        btnTrabajadores.setFocusPainted(false);
+        btnTrabajadores.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        btnTrabajadores.setIconTextGap(20);
+        btnTrabajadores.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                BotonTrabajadoresMouseClicked(evt);
+                btnTrabajadoresMouseClicked(evt);
             }
         });
-        sidebarMenu.add(BotonTrabajadores, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 350, 300, 50));
+        sidebarMenu.add(btnTrabajadores, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 350, 300, 50));
 
-        BotonUsuarios.setBackground(new java.awt.Color(49, 64, 81));
-        BotonUsuarios.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        BotonUsuarios.setForeground(new java.awt.Color(255, 255, 255));
-        BotonUsuarios.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Users.png"))); // NOI18N
-        BotonUsuarios.setText("Usuarios");
-        BotonUsuarios.setFocusPainted(false);
-        BotonUsuarios.addMouseListener(new java.awt.event.MouseAdapter() {
+        btnSocios.setBackground(new java.awt.Color(93, 29, 30));
+        btnSocios.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        btnSocios.setForeground(new java.awt.Color(255, 255, 255));
+        btnSocios.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/user-star.png"))); // NOI18N
+        btnSocios.setText("Socios");
+        btnSocios.setBorderPainted(false);
+        btnSocios.setFocusPainted(false);
+        btnSocios.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        btnSocios.setIconTextGap(20);
+        btnSocios.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                BotonUsuariosMouseClicked(evt);
+                btnSociosMouseClicked(evt);
             }
         });
-        sidebarMenu.add(BotonUsuarios, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 200, 300, 50));
+        sidebarMenu.add(btnSocios, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 200, 300, 50));
 
-        BotonAsistencia.setBackground(new java.awt.Color(49, 64, 81));
-        BotonAsistencia.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        BotonAsistencia.setForeground(new java.awt.Color(255, 255, 255));
-        BotonAsistencia.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Asistance.png"))); // NOI18N
-        BotonAsistencia.setText("Asistencia");
-        BotonAsistencia.setFocusPainted(false);
-        BotonAsistencia.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                BotonAsistenciaMouseClicked(evt);
-            }
-        });
-        BotonAsistencia.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BotonAsistenciaActionPerformed(evt);
-            }
-        });
-        sidebarMenu.add(BotonAsistencia, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 250, 300, 50));
+        btnAsistencias.setBackground(new java.awt.Color(93, 29, 30));
+        btnAsistencias.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        btnAsistencias.setForeground(new java.awt.Color(255, 255, 255));
+        btnAsistencias.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Asistance.png"))); // NOI18N
+        btnAsistencias.setText("Asistencias");
+        btnAsistencias.setBorderPainted(false);
+        btnAsistencias.setFocusPainted(false);
+        btnAsistencias.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        btnAsistencias.setIconTextGap(20);
+        sidebarMenu.add(btnAsistencias, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 400, 300, 50));
 
-        BotonInicio.setBackground(new java.awt.Color(49, 64, 81));
-        BotonInicio.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        BotonInicio.setForeground(new java.awt.Color(255, 255, 255));
-        BotonInicio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Home.png"))); // NOI18N
-        BotonInicio.setText("Inicio");
-        BotonInicio.setFocusPainted(false);
-        BotonInicio.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                BotonInicioMouseClicked(evt);
-            }
-        });
-        BotonInicio.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BotonInicioActionPerformed(evt);
-            }
-        });
-        sidebarMenu.add(BotonInicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 150, 300, 50));
-
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/LogoGym (1)-Photoroom.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/logoparaViewprincipal-removebg-preview.png"))); // NOI18N
         jLabel1.setText("jLabel1");
-        sidebarMenu.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 0, 170, 140));
+        sidebarMenu.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 10, 210, 140));
+
+        btnInicio.setBackground(new java.awt.Color(93, 29, 30));
+        btnInicio.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        btnInicio.setForeground(new java.awt.Color(255, 255, 255));
+        btnInicio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Home.png"))); // NOI18N
+        btnInicio.setText("Inicio");
+        btnInicio.setBorderPainted(false);
+        btnInicio.setFocusPainted(false);
+        btnInicio.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        btnInicio.setIconTextGap(20);
+        btnInicio.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnInicioMouseClicked(evt);
+            }
+        });
+        btnInicio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnInicioActionPerformed(evt);
+            }
+        });
+        sidebarMenu.add(btnInicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 150, 300, 50));
+
+        btnMembresias.setBackground(new java.awt.Color(93, 29, 30));
+        btnMembresias.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        btnMembresias.setForeground(new java.awt.Color(255, 255, 255));
+        btnMembresias.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/file-badge.png"))); // NOI18N
+        btnMembresias.setText("Membresías");
+        btnMembresias.setBorderPainted(false);
+        btnMembresias.setFocusPainted(false);
+        btnMembresias.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        btnMembresias.setIconTextGap(20);
+        btnMembresias.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnMembresiasMouseClicked(evt);
+            }
+        });
+        btnMembresias.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnMembresiasActionPerformed(evt);
+            }
+        });
+        sidebarMenu.add(btnMembresias, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 250, 300, 50));
+
+        btnCerrarSesion.setBackground(new java.awt.Color(93, 29, 30));
+        btnCerrarSesion.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        btnCerrarSesion.setForeground(new java.awt.Color(255, 255, 255));
+        btnCerrarSesion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Home.png"))); // NOI18N
+        btnCerrarSesion.setText("Cerrar sesión");
+        btnCerrarSesion.setBorderPainted(false);
+        btnCerrarSesion.setFocusPainted(false);
+        btnCerrarSesion.setIconTextGap(10);
+        btnCerrarSesion.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnCerrarSesionMouseClicked(evt);
+            }
+        });
+        btnCerrarSesion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCerrarSesionActionPerformed(evt);
+            }
+        });
+        sidebarMenu.add(btnCerrarSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 580, 240, 50));
 
         content.setPreferredSize(new java.awt.Dimension(836, 680));
         content.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -161,42 +205,45 @@ public class ViewPrincipal extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void BotonInventarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonInventarioActionPerformed
+    private void btnInventarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInventarioActionPerformed
         
-    }//GEN-LAST:event_BotonInventarioActionPerformed
+    }//GEN-LAST:event_btnInventarioActionPerformed
 
-    private void BotonAsistenciaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonAsistenciaActionPerformed
+    private void btnSociosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSociosMouseClicked
+        
+    }//GEN-LAST:event_btnSociosMouseClicked
+
+    private void btnTrabajadoresMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnTrabajadoresMouseClicked
+        
+    }//GEN-LAST:event_btnTrabajadoresMouseClicked
+
+    private void btnInventarioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnInventarioMouseClicked
+        
+    }//GEN-LAST:event_btnInventarioMouseClicked
+
+    private void btnInicioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnInicioMouseClicked
         // TODO add your handling code here:
-    }//GEN-LAST:event_BotonAsistenciaActionPerformed
+    }//GEN-LAST:event_btnInicioMouseClicked
 
-    private void BotonInicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonInicioActionPerformed
+    private void btnInicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInicioActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_BotonInicioActionPerformed
+    }//GEN-LAST:event_btnInicioActionPerformed
 
-    private void BotonInicioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonInicioMouseClicked
-        InicioVista inicio= new InicioVista();
-        abrirPaneles(inicio);
-    }//GEN-LAST:event_BotonInicioMouseClicked
+    private void btnMembresiasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnMembresiasMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnMembresiasMouseClicked
 
-    private void BotonUsuariosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonUsuariosMouseClicked
-        UsuariosVista viewUser= new UsuariosVista();
-        abrirPaneles(viewUser);
-    }//GEN-LAST:event_BotonUsuariosMouseClicked
+    private void btnMembresiasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMembresiasActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnMembresiasActionPerformed
 
-    private void BotonTrabajadoresMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonTrabajadoresMouseClicked
-        TrabajadoresVista viewTrab= new TrabajadoresVista();
-        abrirPaneles(viewTrab);
-    }//GEN-LAST:event_BotonTrabajadoresMouseClicked
+    private void btnCerrarSesionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCerrarSesionMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnCerrarSesionMouseClicked
 
-    private void BotonAsistenciaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonAsistenciaMouseClicked
-        AsistenciaVista viewAsis= new AsistenciaVista();
-        abrirPaneles(viewAsis);
-    }//GEN-LAST:event_BotonAsistenciaMouseClicked
-
-    private void BotonInventarioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonInventarioMouseClicked
-        InventarioVista viewInven= new InventarioVista();
-        abrirPaneles(viewInven);
-    }//GEN-LAST:event_BotonInventarioMouseClicked
+    private void btnCerrarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCerrarSesionActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnCerrarSesionActionPerformed
 
     /**
      * @param args the command line arguments
@@ -235,12 +282,14 @@ public class ViewPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public javax.swing.JButton BotonAsistencia;
-    public javax.swing.JButton BotonInicio;
-    public javax.swing.JButton BotonInventario;
-    public javax.swing.JButton BotonTrabajadores;
-    public javax.swing.JButton BotonUsuarios;
-    private javax.swing.JPanel content;
+    public javax.swing.JButton btnAsistencias;
+    public javax.swing.JButton btnCerrarSesion;
+    public javax.swing.JButton btnInicio;
+    public javax.swing.JButton btnInventario;
+    public javax.swing.JButton btnMembresias;
+    public javax.swing.JButton btnSocios;
+    public javax.swing.JButton btnTrabajadores;
+    public javax.swing.JPanel content;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel sidebarMenu;
     // End of variables declaration//GEN-END:variables

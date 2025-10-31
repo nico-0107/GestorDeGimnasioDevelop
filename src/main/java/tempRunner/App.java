@@ -1,17 +1,12 @@
 package tempRunner;
 
-
-import Vista.InicioVista;
-import Vista.LoginView;
-import Vista.ViewPrincipal;
-
+import Controlador.InicioController;
+import Vista.MemHorario.HorariosMemView;
 
 public class App {
-
 	// METODO MAIN PARA INCIAR EL PROGRAMA
 	public static void main(String[] args) {
-            //ViewPrincipal iniciarView= new ViewPrincipal();
-            LoginView lv= new LoginView ();
-            
+            InicioController controlador = new InicioController();
+            controlador.iniciar();
 	}
 }
