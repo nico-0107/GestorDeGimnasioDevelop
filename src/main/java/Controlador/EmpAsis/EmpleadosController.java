@@ -5,6 +5,7 @@
 package Controlador.EmpAsis;
 
 import Controlador.EmpAsis.ModificarEmpController;
+import Modelo.AsistenciaDAO;
 import Modelo.Empleado;
 import Modelo.EmpleadoDAO;
 import Vista.EmpAsis.AgregarEmpView;
@@ -21,10 +22,12 @@ import javax.swing.table.DefaultTableModel;
 public class EmpleadosController {
     private EmpleadosPanel empleadosPanel;
     private EmpleadoDAO empleadoDAO;
+    private AsistenciaDAO asistenciaDAO;
 
     public EmpleadosController(EmpleadosPanel empleadosPanel) {
         this.empleadosPanel = empleadosPanel;
         this.empleadoDAO = EmpleadoDAO.getInstancia();
+        this.asistenciaDAO = AsistenciaDAO.getInstancia();
         inicializarEventos();
         cargarTabla();
     }
@@ -85,6 +88,33 @@ public class EmpleadosController {
     }
     
     private void eliminarEmpleado(){
+        try {
+            int fila = empleadosPanel.tbEmpleados.getSelectedRow();
+            if (fila == -1) {
+                JOptionPane.showMessageDialog(null, "Debe seleccionar una fila", "Aviso", JOptionPane.WARNING_MESSAGE);
+                return;
+            }
+            String idEmpSelect = empleadosPanel.tbEmpleados.getValueAt(fila, 0).toString();
+            String nombre = empleadosPanel.tbEmpleados.getValueAt(fila, 2).toString();
+
+            int opcion = JOptionPane.showConfirmDialog(
+                null,
+                "¿Está seguro que desea eliminar al empleado \"" + nombre + "\" (ID: " + idEmpSelect + ")?",
+                "Confirmar eliminación",
+                JOptionPane.YES_NO_OPTION,
+                JOptionPane.WARNING_MESSAGE
+            );
+
+            if (opcion == JOptionPane.YES_OPTION) {
+                empleadoDAO.eliminar(idEmpSelect);
+                asistenciaDAO.eliminarAsistenciasPorEmpleado(idEmpSelect);
+                cargarTabla();
+                JOptionPane.showMessageDialog(null, "Empleado eliminado correctamente", "Éxito", JOptionPane.INFORMATION_MESSAGE);
+            }
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Ocurrió un error ", "Error", JOptionPane.ERROR_MESSAGE);
+        }
     }
     
     private void  registrarAsistencia(){

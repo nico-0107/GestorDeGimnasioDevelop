@@ -167,7 +167,7 @@ public class ViewPrincipal extends javax.swing.JFrame {
         btnCerrarSesion.setBackground(new java.awt.Color(93, 29, 30));
         btnCerrarSesion.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         btnCerrarSesion.setForeground(new java.awt.Color(255, 255, 255));
-        btnCerrarSesion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Home.png"))); // NOI18N
+        btnCerrarSesion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/log-out.png"))); // NOI18N
         btnCerrarSesion.setText("Cerrar sesión");
         btnCerrarSesion.setBorderPainted(false);
         btnCerrarSesion.setFocusPainted(false);

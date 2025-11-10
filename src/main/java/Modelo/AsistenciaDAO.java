@@ -143,7 +143,25 @@ public class AsistenciaDAO {
         }
         return lista;
     }
+    
+    public boolean eliminarAsistenciasPorEmpleado(String idEmpleado) {
+        boolean eliminado = false;
 
+        Iterator<Asistencia> it = asistencias.iterator();
+        while (it.hasNext()) {
+            Asistencia a = it.next();
+            if (a.getIdEmpleado().equalsIgnoreCase(idEmpleado)) {
+                it.remove();
+                eliminado = true;
+            }
+        }
+
+        if (eliminado) {
+            guardarAsistencias();
+        }
+        return eliminado;
+    }
+    
     /** Genera ID del tipo ASI001 */
     public String generarId() {
         int max = 0;

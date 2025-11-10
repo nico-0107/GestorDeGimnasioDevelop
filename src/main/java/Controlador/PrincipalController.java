@@ -8,6 +8,7 @@ import Controlador.InfoAdmin.DataAdminController;
 import Controlador.EmpAsis.AsistenciasController;
 import Controlador.MemHorario.MembresiaController;
 import Controlador.EmpAsis.EmpleadosController;
+import Controlador.SocioInscrip.SocioController;
 import Modelo.Usuario;
 import Vista.EmpAsis.AsistenciaPanel;
 import Vista.Inicio.InicioPanel;
@@ -55,7 +56,7 @@ public class PrincipalController {
     private void mostrarPanelSocios() {
         SociosPanel panelSocios = new SociosPanel();
         cambiarPanel(panelSocios);
-        //poner el controlador
+        new SocioController(panelSocios, viewPrinc);
     }
     
     private void mostrarPanelMembresias(){

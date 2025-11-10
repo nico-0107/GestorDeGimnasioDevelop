@@ -48,7 +48,7 @@ public class AgregarMemController {
     // =================== LÓGICA =================== //
     private void agregarNewMembresia() {
         try {
-            String idMem = agregarMemView.inputIdMem.getText().trim();
+            String idMem = membresiaDAO.generarId();
             String nombreMem = agregarMemView.inputNombreMem.getText().trim();
             String precioTxt = agregarMemView.inputPrecioMem.getText().trim();
 
@@ -125,7 +125,6 @@ public class AgregarMemController {
     }
 
     private void limpiarCampos() {
-        agregarMemView.inputIdMem.setText("");
         agregarMemView.inputNombreMem.setText("");
         agregarMemView.inputPrecioMem.setText("");
         agregarMemView.cbTipoMem.setSelectedItem("Mensual");

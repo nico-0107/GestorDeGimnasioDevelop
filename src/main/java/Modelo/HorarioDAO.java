@@ -19,7 +19,6 @@ import java.util.List;
  * @author ARIAN BEJAR
  */
 
-
 public class HorarioDAO {
 
     private static HorarioDAO instancia; // Singleton

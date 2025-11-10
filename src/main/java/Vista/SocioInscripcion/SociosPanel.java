@@ -27,9 +27,10 @@ public class SociosPanel extends javax.swing.JPanel {
     
     public SociosPanel() {
         initComponents();
+        /*
         cargarClientesDesdeArchivo();
 
-        BotonAñadirUsuarios.setContentAreaFilled(false);
+        btnAgregar.setContentAreaFilled(false);
         BotonRenovarUsuarios.setContentAreaFilled(false);
         
         Buscador.getDocument().addDocumentListener(new DocumentListener() {
@@ -48,7 +49,7 @@ public class SociosPanel extends javax.swing.JPanel {
                 filtrarClientes();
             }
         });
-        
+        */
         
     }
 
@@ -58,41 +59,45 @@ public class SociosPanel extends javax.swing.JPanel {
     private void initComponents() {
 
         lblUsuarios = new javax.swing.JLabel();
-        BotonAñadirUsuarios = new javax.swing.JButton();
+        btnAgregar = new javax.swing.JButton();
         Buscador = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        TablaClientes = new javax.swing.JTable();
+        tbSocios = new javax.swing.JTable();
         BotonRenovarUsuarios = new javax.swing.JButton();
+        btnModificar = new javax.swing.JButton();
+        btnEliminar = new javax.swing.JButton();
+        btnAsignarMem = new javax.swing.JButton();
 
         setPreferredSize(new java.awt.Dimension(836, 680));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        lblUsuarios.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        lblUsuarios.setText("Usuarios del Gimnasio");
-        add(lblUsuarios, new org.netbeans.lib.awtextra.AbsoluteConstraints(35, 31, -1, -1));
+        lblUsuarios.setFont(new java.awt.Font("Century Gothic", 1, 24)); // NOI18N
+        lblUsuarios.setForeground(new java.awt.Color(0, 0, 0));
+        lblUsuarios.setText("SOCIOS DEL GIMNASIO");
+        add(lblUsuarios, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, -1, -1));
 
-        BotonAñadirUsuarios.setText("AÑADIR USUARIOS");
-        BotonAñadirUsuarios.setFocusPainted(false);
-        BotonAñadirUsuarios.addActionListener(new java.awt.event.ActionListener() {
+        btnAgregar.setText("Nuevo");
+        btnAgregar.setFocusPainted(false);
+        btnAgregar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BotonAñadirUsuariosActionPerformed(evt);
+                btnAgregarActionPerformed(evt);
             }
         });
-        add(BotonAñadirUsuarios, new org.netbeans.lib.awtextra.AbsoluteConstraints(35, 76, 143, 31));
+        add(btnAgregar, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 80, 110, 31));
 
         Buscador.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BuscadorActionPerformed(evt);
             }
         });
-        add(Buscador, new org.netbeans.lib.awtextra.AbsoluteConstraints(602, 75, 194, 32));
+        add(Buscador, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 130, 194, 32));
 
-        jLabel2.setText("BUSCAR USUARIO POR DNI");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(436, 83, -1, -1));
+        jLabel2.setText("BUSCAR POR DNI");
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, -1, -1));
 
-        TablaClientes.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        TablaClientes.setModel(new javax.swing.table.DefaultTableModel(
+        tbSocios.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        tbSocios.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null},
@@ -138,7 +143,7 @@ public class SociosPanel extends javax.swing.JPanel {
                 {null, null, null, null, null, null, null}
             },
             new String [] {
-                "DNI", "Nombres", "Apellidos", "Inicio", "Fin", "Tipo", "Estado"
+                "ID", "DNI", "Nombre", "Apellido", "Correo", "Fecha creación", "Estado"
             }
         ) {
             Class[] types = new Class [] {
@@ -156,19 +161,19 @@ public class SociosPanel extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
-        TablaClientes.getTableHeader().setReorderingAllowed(false);
-        jScrollPane1.setViewportView(TablaClientes);
-        if (TablaClientes.getColumnModel().getColumnCount() > 0) {
-            TablaClientes.getColumnModel().getColumn(0).setResizable(false);
-            TablaClientes.getColumnModel().getColumn(1).setResizable(false);
-            TablaClientes.getColumnModel().getColumn(2).setResizable(false);
-            TablaClientes.getColumnModel().getColumn(3).setResizable(false);
-            TablaClientes.getColumnModel().getColumn(4).setResizable(false);
-            TablaClientes.getColumnModel().getColumn(5).setResizable(false);
-            TablaClientes.getColumnModel().getColumn(6).setResizable(false);
+        tbSocios.getTableHeader().setReorderingAllowed(false);
+        jScrollPane1.setViewportView(tbSocios);
+        if (tbSocios.getColumnModel().getColumnCount() > 0) {
+            tbSocios.getColumnModel().getColumn(0).setResizable(false);
+            tbSocios.getColumnModel().getColumn(1).setResizable(false);
+            tbSocios.getColumnModel().getColumn(2).setResizable(false);
+            tbSocios.getColumnModel().getColumn(3).setResizable(false);
+            tbSocios.getColumnModel().getColumn(4).setResizable(false);
+            tbSocios.getColumnModel().getColumn(5).setResizable(false);
+            tbSocios.getColumnModel().getColumn(6).setResizable(false);
         }
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(35, 125, 761, 459));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 180, 780, 470));
 
         BotonRenovarUsuarios.setText("RENOVAR USUARIOS");
         BotonRenovarUsuarios.setFocusPainted(false);
@@ -177,11 +182,20 @@ public class SociosPanel extends javax.swing.JPanel {
                 BotonRenovarUsuariosActionPerformed(evt);
             }
         });
-        add(BotonRenovarUsuarios, new org.netbeans.lib.awtextra.AbsoluteConstraints(196, 76, 166, 31));
+        add(BotonRenovarUsuarios, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 80, 166, 31));
+
+        btnModificar.setText("Modificar");
+        add(btnModificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 80, 110, 30));
+
+        btnEliminar.setText("Eliminar");
+        add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 80, 110, 30));
+
+        btnAsignarMem.setText("Membresía");
+        add(btnAsignarMem, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 80, 110, 30));
     }// </editor-fold>//GEN-END:initComponents
     private void cargarClientesDesdeArchivo() {
-        String archivoClientes = "src/main/resources/Files/Clientes.txt";
-        DefaultTableModel model = (DefaultTableModel) TablaClientes.getModel();
+        /*String archivoClientes = "src/main/resources/Files/Clientes.txt";
+        DefaultTableModel model = (DefaultTableModel) tbSocios.getModel();
         model.setRowCount(0);
         
         SimpleDateFormat sdf = new SimpleDateFormat("dd MMM yyyy", Locale.forLanguageTag("es-ES"));
@@ -217,17 +231,20 @@ public class SociosPanel extends javax.swing.JPanel {
     DefaultTableCellRenderer centerRenderer = new DefaultTableCellRenderer();
     centerRenderer.setHorizontalAlignment(DefaultTableCellRenderer.CENTER);
 
-    for (int i = 0; i < TablaClientes.getColumnCount(); i++) {
-        TablaClientes.getColumnModel().getColumn(i).setCellRenderer(centerRenderer);
+    for (int i = 0; i < tbSocios.getColumnCount(); i++) {
+        tbSocios.getColumnModel().getColumn(i).setCellRenderer(centerRenderer);
     }
     
-    TablaClientes.setRowHeight(25);
-    TablaClientes.getColumnModel().getColumn(6).setCellRenderer(new EstadoCellRenderer());
+    tbSocios.setRowHeight(25);
+    tbSocios.getColumnModel().getColumn(6).setCellRenderer(new EstadoCellRenderer());
+*/
 }
 
+    /*
     private void filtrarClientes() {
+        
         String textoBusqueda = Buscador.getText().trim().toLowerCase();
-        DefaultTableModel model = (DefaultTableModel) TablaClientes.getModel();
+        DefaultTableModel model = (DefaultTableModel) tbSocios.getModel();
         model.setRowCount(0); 
         
         List<Object[]> filasActivas = new ArrayList<>();
@@ -250,9 +267,10 @@ public class SociosPanel extends javax.swing.JPanel {
         for (Object[] fila : filasInactivas) {
             model.addRow(fila);
         }
+
     }
     
-        private class EstadoCellRenderer extends DefaultTableCellRenderer {
+    private class EstadoCellRenderer extends DefaultTableCellRenderer {
         @Override
         public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected,
                                                        boolean hasFocus, int row, int column) {
@@ -272,55 +290,58 @@ public class SociosPanel extends javax.swing.JPanel {
             return c;
         }
     }
-    
-    private void BotonAñadirUsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonAñadirUsuariosActionPerformed
-    JDialog dialog = new JDialog();
+    */
+    private void btnAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarActionPerformed
+    /*JDialog dialog = new JDialog();
     dialog.setTitle("Añadir Usuario");
     dialog.setModal(true);
     dialog.setSize(500, 400);
     dialog.setResizable(false);
     dialog.setLocationRelativeTo(this);
     
-    AñadirUsuariosMenu añadirUsuariosMenu = new AñadirUsuariosMenu(dialog);
+    AñadirUsuarioView añadirUsuariosMenu = new AñadirUsuarioView(dialog);
     dialog.setContentPane(añadirUsuariosMenu);
     
     dialog.setVisible(true);
     
     if (añadirUsuariosMenu.seAgregoNuevoUsuario()) {
         cargarClientesDesdeArchivo();
-    }
-    }//GEN-LAST:event_BotonAñadirUsuariosActionPerformed
+    }*/
+    }//GEN-LAST:event_btnAgregarActionPerformed
 
     private void BuscadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BuscadorActionPerformed
 
     }//GEN-LAST:event_BuscadorActionPerformed
 
     private void BotonRenovarUsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonRenovarUsuariosActionPerformed
-    JDialog dialog = new JDialog();
-    dialog.setTitle("Renovar Usuario");
-    dialog.setModal(true);
-    dialog.setSize(500, 400);
-    dialog.setResizable(false);
-    dialog.setLocationRelativeTo(this);
+        /*JDialog dialog = new JDialog();
+        dialog.setTitle("Renovar Usuario");
+        dialog.setModal(true);
+        dialog.setSize(500, 400);
+        dialog.setResizable(false);
+        dialog.setLocationRelativeTo(this);
 
-    RenovarUsuariosMenu renovarUsuariosMenu = new RenovarUsuariosMenu(dialog);
-    dialog.setContentPane(renovarUsuariosMenu);
-    
-    dialog.setVisible(true);
-    
-    if (renovarUsuariosMenu.seRenovoUsuario()) {
-        cargarClientesDesdeArchivo();
-    }
+        RenovarUsuariosMenu renovarUsuariosMenu = new RenovarUsuariosMenu(dialog);
+        dialog.setContentPane(renovarUsuariosMenu);
+
+        dialog.setVisible(true);
+
+        if (renovarUsuariosMenu.seRenovoUsuario()) {
+            cargarClientesDesdeArchivo();
+        }*/
     }//GEN-LAST:event_BotonRenovarUsuariosActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public javax.swing.JButton BotonAñadirUsuarios;
     public javax.swing.JButton BotonRenovarUsuarios;
-    protected javax.swing.JTextField Buscador;
-    public javax.swing.JTable TablaClientes;
+    public javax.swing.JTextField Buscador;
+    public javax.swing.JButton btnAgregar;
+    public javax.swing.JButton btnAsignarMem;
+    public javax.swing.JButton btnEliminar;
+    public javax.swing.JButton btnModificar;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblUsuarios;
+    public javax.swing.JTable tbSocios;
     // End of variables declaration//GEN-END:variables
 }

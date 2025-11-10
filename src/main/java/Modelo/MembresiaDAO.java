@@ -145,5 +145,18 @@ public class MembresiaDAO {
         }
         return null;
     }
+    
+    public String generarId() {
+        int max = 0;
+        for (Membresia m : membresias) {
+            try {
+                int num = Integer.parseInt(m.getIdMembresia().substring(3)); // "INS001" → 1
+                if (num > max) max = num;
+            } catch (NumberFormatException ex) {
+                // ignorar formato inválido
+            }
+        }
+        return String.format("MEM%03d", max + 1);
+    }
 }
 

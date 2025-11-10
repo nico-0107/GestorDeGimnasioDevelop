@@ -17,7 +17,7 @@ import java.util.Date;
 import java.text.SimpleDateFormat;
 import javax.swing.JOptionPane;
 
-public class AñadirUsuariosMenu extends javax.swing.JPanel {
+public class AñadirUsuarioView extends javax.swing.JPanel {
 
     private final JDialog dialog; 
     private ListaClientes listaClientes;
@@ -25,9 +25,9 @@ public class AñadirUsuariosMenu extends javax.swing.JPanel {
 
     public boolean seAgregoNuevoUsuario() {
         return usuarioAgregado;
-}
+    }
 
-    public AñadirUsuariosMenu(JDialog dialog) {
+    public AñadirUsuarioView(JDialog dialog) {
 
         this.dialog = dialog;
         this.listaClientes = new ListaClientes();
@@ -137,7 +137,7 @@ public class AñadirUsuariosMenu extends javax.swing.JPanel {
         jLabel1.setText("DNI");
 
         lblUsuarios.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        lblUsuarios.setText("Agregar Miembro");
+        lblUsuarios.setText("Agregar Socio");
 
         escribirDNI.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -146,10 +146,10 @@ public class AñadirUsuariosMenu extends javax.swing.JPanel {
         });
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel2.setText("Nombres");
+        jLabel2.setText("Nombre");
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel3.setText("Apellidos");
+        jLabel3.setText("Apellido");
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel4.setText("Inicio de membersía");
@@ -213,7 +213,7 @@ public class AñadirUsuariosMenu extends javax.swing.JPanel {
                                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                                         .addComponent(jLabel3)
                                         .addGap(18, 18, 18)
-                                        .addComponent(escribirApellido))
+                                        .addComponent(escribirApellido, javax.swing.GroupLayout.DEFAULT_SIZE, 364, Short.MAX_VALUE))
                                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(jLabel1)
@@ -278,13 +278,13 @@ public class AñadirUsuariosMenu extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton Añadir;
-    public javax.swing.JLabel FechaFinal;
-    public javax.swing.JComboBox<String> TipoDeMembersia;
+    private javax.swing.JLabel FechaFinal;
+    private javax.swing.JComboBox<String> TipoDeMembersia;
     public javax.swing.JButton cancelar;
     public javax.swing.JTextField escribirApellido;
     public javax.swing.JTextField escribirDNI;
     public javax.swing.JTextField escribirNombre;
-    public com.toedter.calendar.JDateChooser jDateChooser1;
+    private com.toedter.calendar.JDateChooser jDateChooser1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
