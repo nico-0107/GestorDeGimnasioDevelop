@@ -22,6 +22,7 @@ public class AsistenciaPanel extends javax.swing.JPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         tbAsistencias = new javax.swing.JTable();
         btnBuscar = new javax.swing.JButton();
+        dateChoPorDia = new com.toedter.calendar.JDateChooser();
 
         jButton2.setText("jButton1");
 
@@ -40,8 +41,9 @@ public class AsistenciaPanel extends javax.swing.JPanel {
 
         cbOpcionFiltro.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecionar", "por día", "por dni" }));
         add(cbOpcionFiltro, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 100, 100, -1));
-        add(inputDni, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 100, 180, 30));
+        add(inputDni, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 100, 180, 30));
 
+        tbAsistencias.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         tbAsistencias.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null},
@@ -59,12 +61,14 @@ public class AsistenciaPanel extends javax.swing.JPanel {
 
         btnBuscar.setText("buscar");
         add(btnBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 100, 100, 30));
+        add(dateChoPorDia, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 100, 180, 30));
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton btnBuscar;
     public javax.swing.JComboBox<String> cbOpcionFiltro;
+    public com.toedter.calendar.JDateChooser dateChoPorDia;
     public javax.swing.JTextField inputDni;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;

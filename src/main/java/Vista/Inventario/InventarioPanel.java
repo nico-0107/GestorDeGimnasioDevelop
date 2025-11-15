@@ -88,7 +88,7 @@ public class InventarioPanel extends javax.swing.JPanel {
             TablaObjetos.getColumnModel().getColumn(i).setCellRenderer(centerRenderer);
         }
         
-        TablaObjetos.setRowHeight(25);
+        TablaObjetos.setRowHeight(30);
         TablaObjetos.getColumnModel().getColumn(3).setCellRenderer(new EstadoCellRenderer());
     }
     
@@ -176,7 +176,7 @@ public class InventarioPanel extends javax.swing.JPanel {
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lblUsuarios.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        lblUsuarios.setText("Inventario del Gimnasio");
+        lblUsuarios.setText("INVENTARIO DEL GIMNASIO");
         add(lblUsuarios, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, -1, -1));
 
         TablaObjetos.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N

@@ -138,6 +138,7 @@ public class HorariosMemController {
             Object[] fila = {h.getIdHorario(), h.getDia(), h.getHoraInicio(), h.getHoraFin()};
             modelo.addRow(fila);
         }
+        horariosMemView.tbHorarios.setRowHeight(30);
     }
 
     private void limpiarCampos() {

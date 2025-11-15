@@ -62,7 +62,7 @@ public class InscripcionView extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         tbInscripciones = new javax.swing.JTable();
         btnPagoMem = new javax.swing.JButton();
-        btnEliminarIns = new javax.swing.JButton();
+        btnRenovarIns = new javax.swing.JButton();
         lbMontoMem = new javax.swing.JLabel();
         lblUsuarios19 = new javax.swing.JLabel();
 
@@ -189,8 +189,8 @@ public class InscripcionView extends javax.swing.JFrame {
         btnPagoMem.setText("Pago membresía");
         getContentPane().add(btnPagoMem, new org.netbeans.lib.awtextra.AbsoluteConstraints(336, 399, 146, 30));
 
-        btnEliminarIns.setText("Eliminar inscripcion");
-        getContentPane().add(btnEliminarIns, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 399, 149, 30));
+        btnRenovarIns.setText("Renovar inscripción");
+        getContentPane().add(btnRenovarIns, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 399, 149, 30));
 
         lbMontoMem.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
         lbMontoMem.setForeground(new java.awt.Color(0, 0, 0));
@@ -242,8 +242,8 @@ public class InscripcionView extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton btnAgregarIns;
-    public javax.swing.JButton btnEliminarIns;
     public javax.swing.JButton btnPagoMem;
+    public javax.swing.JButton btnRenovarIns;
     public javax.swing.JComboBox<Membresia> cbOpcionMembresias;
     public com.toedter.calendar.JDateChooser dateChoComienzo;
     private javax.swing.JScrollPane jScrollPane1;

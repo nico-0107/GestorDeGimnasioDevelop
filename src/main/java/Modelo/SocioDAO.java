@@ -42,7 +42,7 @@ public class SocioDAO {
     }
 
     // ================== ARCHIVO ================== //
-    private void cargarSocios() {
+    public void cargarSocios() {
         socios.clear();
         File file = new File(FILE_NAME);
 

@@ -19,6 +19,7 @@ Controlador\SocioInscrip\PagoInscripcionController.class
 Controlador\SocioInscrip\SocioController$1.class
 Vista\Inicio\InicioPanel$1.class
 Vista\MemHorario\MembresiasPanel.class
+Controlador\EmpAsis\AsistenciasController$1.class
 Vista\SocioInscripcion\PagoInscripcionView$1.class
 Vista\EmpAsis\EmpleadosPanel$1.class
 Controlador\MemHorario\HorariosMemController.class
@@ -30,6 +31,7 @@ Vista\LoginView$2.class
 Controlador\SocioInscrip\InscripcionController$1.class
 Vista\SocioInscripcion\AgregarSocioView$2.class
 Vista\SocioInscripcion\SociosPanel$1.class
+Controlador\SocioInscrip\SocioController$4.class
 Modelo\Horario.class
 Modelo\Gimnasio.class
 Vista\Inventario\ModificarObjetoMenu$3.class
@@ -55,6 +57,7 @@ Controlador\MemHorario\MembresiaController.class
 Modelo\Persona.class
 Vista\LoginView$1.class
 Vista\SocioInscripcion\SociosPanel.class
+Controlador\EmpAsis\EmpleadosController$1.class
 Controlador\LoginController.class
 Controlador\MemHorario\ModificarMemController.class
 Vista\SocioInscripcion\ModificarSocioView$2.class
@@ -67,7 +70,9 @@ Modelo\Empleado.class
 Vista\ViewPrincipal$8.class
 Vista\EmpAsis\EmpleadosPanel.class
 Vista\SocioInscripcion\ModificarSocioView.class
+Controlador\MemHorario\MembresiaController$2.class
 Vista\MemHorario\AgregarMemView$1.class
+Controlador\SocioInscrip\PagoInscripcionController$1.class
 Vista\ViewPrincipal$1.class
 Vista\SocioInscripcion\InscripcionView$1.class
 Controlador\EmpAsis\AsistenciasController.class
@@ -85,13 +90,16 @@ Vista\InicioView$1.class
 Vista\MemHorario\ModificarMemView$1.class
 Controlador\SocioInscrip\ModificarSocioController.class
 Vista\ViewPrincipal$11.class
+Controlador\EmpAsis\RegistrarAsisController$1.class
 Modelo\ListaClientes$Nodo.class
 Vista\SocioInscripcion\PagoInscripcionView.class
+Controlador\SocioInscrip\SocioController$5.class
 Vista\Inventario\AñadirObjetoMenu$4.class
 Vista\SocioInscripcion\RenovarUsuariosMenu$4.class
 Controlador\EmpAsis\ModificarEmpController.class
 Modelo\HorarioDAO.class
 Vista\EmpAsis\ModificarEmpView.class
+Controlador\MemHorario\MembresiaController$1.class
 Vista\ViewPrincipal$3.class
 Modelo\Usuario.class
 Vista\Inventario\ModificarObjetoMenu$2.class
@@ -112,6 +120,7 @@ Modelo\ListaObjetos.class
 Vista\ViewPrincipal$10.class
 Vista\ViewPrincipal$4.class
 Controlador\SocioInscrip\InscripcionController.class
+Vista\SocioInscripcion\PagoInscripcionView$2.class
 Vista\SocioInscripcion\SociosPanel$3.class
 Modelo\EmpleadoDAO.class
 Modelo\Membresia.class

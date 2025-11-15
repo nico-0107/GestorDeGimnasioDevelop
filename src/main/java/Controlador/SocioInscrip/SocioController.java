@@ -4,6 +4,7 @@
  */
 package Controlador.SocioInscrip;
 
+import Modelo.InscripcionDAO;
 import Modelo.Socio;
 import Modelo.SocioDAO;
 import Vista.SocioInscripcion.AgregarSocioView;
@@ -11,9 +12,16 @@ import Vista.SocioInscripcion.InscripcionView;
 import Vista.SocioInscripcion.ModificarSocioView;
 import Vista.SocioInscripcion.SociosPanel;
 import Vista.ViewPrincipal;
+import java.awt.Color;
+import java.awt.Component;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.List;
 import javax.swing.JOptionPane;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -24,11 +32,14 @@ public class SocioController {
     private SociosPanel sociosPanel;
     private ViewPrincipal principalView;
     private SocioDAO socioDAO;
+    private InscripcionDAO inscripcionDAO;
 
     public SocioController(SociosPanel sociosPanel ,ViewPrincipal principalView) {
         this.sociosPanel = sociosPanel;
         this.principalView = principalView;
         this.socioDAO = SocioDAO.getInstancia();
+        this.inscripcionDAO = InscripcionDAO.getInstancia();
+        socioDAO.cargarSocios();
         inicializarEventos();
         cargarTabla();
     }
@@ -38,12 +49,24 @@ public class SocioController {
         sociosPanel.btnModificar.addActionListener(e -> modificarSocio());
         sociosPanel.btnEliminar.addActionListener(e -> eliminarSocio());
         sociosPanel.btnAsignarMem.addActionListener(e -> asignarMembresia());
+        sociosPanel.btnBuscar.addActionListener(e -> buscarSocio());
+        sociosPanel.inputDni.addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyReleased(KeyEvent e) {
+                String dni = sociosPanel.inputDni.getText().trim();
+                if (dni.isEmpty()) {
+                    cargarTabla(); // recarga automactica
+                }
+            }
+        });
     }
     
     public void cargarTabla(){
+        inscripcionDAO.actualizarEstadosAutomaticos();
         DefaultTableModel modelo = (DefaultTableModel) sociosPanel.tbSocios.getModel();
         modelo.setRowCount(0);
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        
         for (Socio s : SocioDAO.getInstancia().listar()) {
             modelo.addRow(new Object[]{
                 s.getIdSocio(),
@@ -55,7 +78,50 @@ public class SocioController {
                 s.getEstado()
             });
         }
+        sociosPanel.tbSocios.setRowHeight(30);
+        aplicarColoresSocios();
     }
+    
+    private void aplicarColoresSocios() {
+    sociosPanel.tbSocios.setDefaultRenderer(Object.class, new DefaultTableCellRenderer() {
+
+        @Override
+        public Component getTableCellRendererComponent(JTable table, Object value,
+                boolean isSelected, boolean hasFocus, int row, int column) {
+
+            Component c = super.getTableCellRendererComponent(table, value, isSelected, hasFocus, row, column);
+
+            if (column == 6) {
+                String estado = table.getValueAt(row, 6).toString();
+
+                if (!isSelected) {
+                    if (estado.equalsIgnoreCase("inactivo")) {
+                        c.setBackground(new Color(255, 182, 179)); // rojo suave
+                    } 
+                    else if (estado.equalsIgnoreCase("activo")) {
+                        c.setBackground(new Color(189, 231, 189)); // verde suave
+                    } 
+                    else {
+                        c.setBackground(Color.WHITE);
+                    }
+                    c.setForeground(Color.BLACK);
+                } else {
+                    c.setBackground(new Color(184, 207, 229)); // azul selección
+                }
+
+                return c;
+            }
+            if (!isSelected) {
+                c.setBackground(Color.WHITE);
+                c.setForeground(Color.BLACK);
+            } else {
+                c.setBackground(new Color(184, 207, 229));
+            }
+
+            return c;
+        }
+    });
+}
     
     private void agregarSocio(){
         principalView.setEnabled(false);
@@ -165,5 +231,41 @@ public class SocioController {
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Ocurrió un error ", "Error", JOptionPane.ERROR_MESSAGE);
         }
+    }
+    
+    public void buscarSocio() {
+      
+        String dni = sociosPanel.inputDni.getText().trim();
+        DefaultTableModel model = (DefaultTableModel) sociosPanel.tbSocios.getModel();
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+
+        // Validar campo vacío
+        if (dni.isEmpty()) {
+            JOptionPane.showMessageDialog(sociosPanel, "Por favor, ingrese un DNI para buscar.");
+            return;
+        }
+
+        // Buscar el socio directamente por DNI (sin recorrer toda la lista)
+        Socio socioEncontrado = socioDAO.buscarPorDni(dni);
+
+        if (socioEncontrado != null) {
+            limpiarTabla();
+            model.addRow(new Object[]{
+                socioEncontrado.getIdSocio(),
+                socioEncontrado.getDNI(),
+                socioEncontrado.getNombres(),
+                socioEncontrado.getApellidos(),
+                socioEncontrado.getCorreo(),
+                sdf.format(socioEncontrado.getFechaCreacion()),
+                socioEncontrado.getEstado()
+            });
+        } else {
+            JOptionPane.showMessageDialog(sociosPanel, "No se encontró ningún socio con el DNI ingresado.");
+        }
+}
+    
+    private void limpiarTabla() {
+        DefaultTableModel model = (DefaultTableModel) sociosPanel.tbSocios.getModel();
+        model.setRowCount(0);
     }
 }

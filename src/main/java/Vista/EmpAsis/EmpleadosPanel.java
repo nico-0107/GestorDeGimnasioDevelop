@@ -23,6 +23,8 @@ public class EmpleadosPanel extends javax.swing.JPanel {
         btnAgregar = new javax.swing.JButton();
         btnEliminar = new javax.swing.JButton();
         btnModificar = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        inputBuscar = new javax.swing.JTextField();
 
         jButton2.setText("jButton1");
 
@@ -31,7 +33,7 @@ public class EmpleadosPanel extends javax.swing.JPanel {
 
         lblUsuarios.setFont(new java.awt.Font("Century Gothic", 1, 24)); // NOI18N
         lblUsuarios.setForeground(new java.awt.Color(0, 0, 0));
-        lblUsuarios.setText("Empleados del Gimnasio");
+        lblUsuarios.setText("EMPLEADOS DEL GIMNASIO");
         add(lblUsuarios, new org.netbeans.lib.awtextra.AbsoluteConstraints(29, 47, -1, -1));
 
         tbEmpleados.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -88,7 +90,7 @@ public class EmpleadosPanel extends javax.swing.JPanel {
                 java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false
+                false, true, false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -102,7 +104,7 @@ public class EmpleadosPanel extends javax.swing.JPanel {
         tbEmpleados.getTableHeader().setReorderingAllowed(false);
         jScrollPane1.setViewportView(tbEmpleados);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(29, 136, 783, 420));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(29, 196, 783, 360));
 
         btnRegistrarAsis.setText("Registrar Asistencia");
         add(btnRegistrarAsis, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 100, -1, -1));
@@ -115,6 +117,10 @@ public class EmpleadosPanel extends javax.swing.JPanel {
 
         btnModificar.setText("Modificar");
         add(btnModificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 100, 120, -1));
+
+        jLabel1.setText("Buscar por dni: ");
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 150, -1, -1));
+        add(inputBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 140, 190, 30));
     }// </editor-fold>//GEN-END:initComponents
 
 
@@ -123,8 +129,10 @@ public class EmpleadosPanel extends javax.swing.JPanel {
     public javax.swing.JButton btnEliminar;
     public javax.swing.JButton btnModificar;
     public javax.swing.JButton btnRegistrarAsis;
+    public javax.swing.JTextField inputBuscar;
     private javax.swing.JButton jButton2;
     private com.toedter.calendar.JDayChooser jDayChooser1;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblUsuarios;
     public javax.swing.JTable tbEmpleados;

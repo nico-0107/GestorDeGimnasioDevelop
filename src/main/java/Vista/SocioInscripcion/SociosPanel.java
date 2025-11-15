@@ -60,7 +60,7 @@ public class SociosPanel extends javax.swing.JPanel {
 
         lblUsuarios = new javax.swing.JLabel();
         btnAgregar = new javax.swing.JButton();
-        Buscador = new javax.swing.JTextField();
+        inputDni = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tbSocios = new javax.swing.JTable();
@@ -68,6 +68,7 @@ public class SociosPanel extends javax.swing.JPanel {
         btnModificar = new javax.swing.JButton();
         btnEliminar = new javax.swing.JButton();
         btnAsignarMem = new javax.swing.JButton();
+        btnBuscar = new javax.swing.JButton();
 
         setPreferredSize(new java.awt.Dimension(836, 680));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -86,12 +87,12 @@ public class SociosPanel extends javax.swing.JPanel {
         });
         add(btnAgregar, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 80, 110, 31));
 
-        Buscador.addActionListener(new java.awt.event.ActionListener() {
+        inputDni.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BuscadorActionPerformed(evt);
+                inputDniActionPerformed(evt);
             }
         });
-        add(Buscador, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 130, 194, 32));
+        add(inputDni, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 130, 194, 32));
 
         jLabel2.setText("BUSCAR POR DNI");
         add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, -1, -1));
@@ -150,7 +151,7 @@ public class SociosPanel extends javax.swing.JPanel {
                 java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false
+                false, true, false, false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -192,6 +193,9 @@ public class SociosPanel extends javax.swing.JPanel {
 
         btnAsignarMem.setText("Membresía");
         add(btnAsignarMem, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 80, 110, 30));
+
+        btnBuscar.setText("Buscar");
+        add(btnBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 130, 100, 30));
     }// </editor-fold>//GEN-END:initComponents
     private void cargarClientesDesdeArchivo() {
         /*String archivoClientes = "src/main/resources/Files/Clientes.txt";
@@ -309,9 +313,9 @@ public class SociosPanel extends javax.swing.JPanel {
     }*/
     }//GEN-LAST:event_btnAgregarActionPerformed
 
-    private void BuscadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BuscadorActionPerformed
+    private void inputDniActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputDniActionPerformed
 
-    }//GEN-LAST:event_BuscadorActionPerformed
+    }//GEN-LAST:event_inputDniActionPerformed
 
     private void BotonRenovarUsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonRenovarUsuariosActionPerformed
         /*JDialog dialog = new JDialog();
@@ -334,11 +338,12 @@ public class SociosPanel extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton BotonRenovarUsuarios;
-    public javax.swing.JTextField Buscador;
     public javax.swing.JButton btnAgregar;
     public javax.swing.JButton btnAsignarMem;
+    public javax.swing.JButton btnBuscar;
     public javax.swing.JButton btnEliminar;
     public javax.swing.JButton btnModificar;
+    public javax.swing.JTextField inputDni;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblUsuarios;

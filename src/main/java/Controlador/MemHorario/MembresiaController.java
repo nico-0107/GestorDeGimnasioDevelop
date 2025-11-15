@@ -10,11 +10,20 @@ import Vista.MemHorario.AgregarMemView;
 import Vista.MemHorario.HorariosMemView;
 import Vista.MemHorario.MembresiasPanel;
 import Vista.MemHorario.ModificarMemView;
+import java.awt.Color;
+import java.awt.Component;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import javax.swing.JOptionPane;
+import javax.swing.JTable;
+import javax.swing.RowFilter;
+import javax.swing.event.DocumentEvent;
+import javax.swing.event.DocumentListener;
+import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableModel;
+import javax.swing.table.TableRowSorter;
 
 /**
  *
@@ -23,6 +32,8 @@ import javax.swing.table.DefaultTableModel;
 public class MembresiaController {
     private MembresiasPanel membresiaPanel;
     private MembresiaDAO membresiaDAO;
+    private TableRowSorter<TableModel> sorter;
+
 
     public MembresiaController(MembresiasPanel membresiaPanel) {
         this.membresiaPanel = membresiaPanel;
@@ -38,7 +49,43 @@ public class MembresiaController {
         membresiaPanel.btnHabilitar.addActionListener(e -> habilitarMembresia());
         membresiaPanel.btnDeshabilitar.addActionListener(e -> deshabilitarMembresia());
         membresiaPanel.btnHorarios.addActionListener(e -> agregarHorarioMembresia());
+        configurarBuscador(); 
     }
+    
+    private void configurarBuscador() {
+
+        sorter = new TableRowSorter<>(membresiaPanel.tbMembresias.getModel());
+        membresiaPanel.tbMembresias.setRowSorter(sorter);
+
+        membresiaPanel.inputBuscar.getDocument().addDocumentListener(new DocumentListener() {
+            @Override
+            public void insertUpdate(DocumentEvent e) {
+                filtrarPorNombre();
+            }
+
+            @Override
+            public void removeUpdate(DocumentEvent e) {
+                filtrarPorNombre();
+            }
+
+            @Override
+            public void changedUpdate(DocumentEvent e) {
+                filtrarPorNombre();
+            }
+        });
+    }
+
+    private void filtrarPorNombre() {
+        String texto = membresiaPanel.inputBuscar.getText().trim();
+
+        if (texto.isEmpty()) {
+            sorter.setRowFilter(null); // Quitar filtro
+            return;
+        }
+
+        sorter.setRowFilter(RowFilter.regexFilter("(?i)" + texto, 1)); // 1 = columna nombre
+    }
+
     
     public void cargarTabla(){
         DefaultTableModel modelo = (DefaultTableModel) membresiaPanel.tbMembresias.getModel();
@@ -56,7 +103,50 @@ public class MembresiaController {
                 m.getEstado()
             });
         }
+        membresiaPanel.tbMembresias.setRowHeight(30);
+        aplicarColoresMembresia();
     }
+    
+    private void aplicarColoresMembresia() {
+    membresiaPanel.tbMembresias.setDefaultRenderer(Object.class, new DefaultTableCellRenderer() {
+
+        @Override
+        public Component getTableCellRendererComponent(JTable table, Object value,
+                boolean isSelected, boolean hasFocus, int row, int column) {
+
+            Component c = super.getTableCellRendererComponent(table, value, isSelected, hasFocus, row, column);
+
+            if (column == 7) {
+                String estado = table.getValueAt(row, 7).toString();
+
+                if (!isSelected) {
+                    if (estado.equalsIgnoreCase("inactiva")) {
+                        c.setBackground(new Color(255, 182, 179)); // rojo suave
+                    } 
+                    else if (estado.equalsIgnoreCase("activa")) {
+                        c.setBackground(new Color(189, 231, 189)); // verde suave
+                    } 
+                    else {
+                        c.setBackground(Color.WHITE);
+                    }
+                    c.setForeground(Color.BLACK);
+                } else {
+                    c.setBackground(new Color(184, 207, 229)); // azul selección
+                }
+
+                return c;
+            }
+            if (!isSelected) {
+                c.setBackground(Color.WHITE);
+                c.setForeground(Color.BLACK);
+            } else {
+                c.setBackground(new Color(184, 207, 229));
+            }
+
+            return c;
+        }
+    });
+}
     
     private void agregarMembresia(){
         AgregarMemView agregarMemView = new AgregarMemView();

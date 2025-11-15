@@ -13,7 +13,12 @@ import Vista.EmpAsis.EmpleadosPanel;
 import Vista.EmpAsis.ModificarEmpView;
 import Vista.EmpAsis.RegistrarAsisEmpView;
 import javax.swing.JOptionPane;
+import javax.swing.RowFilter;
+import javax.swing.event.DocumentEvent;
+import javax.swing.event.DocumentListener;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableModel;
+import javax.swing.table.TableRowSorter;
 
 /**
  *
@@ -23,6 +28,7 @@ public class EmpleadosController {
     private EmpleadosPanel empleadosPanel;
     private EmpleadoDAO empleadoDAO;
     private AsistenciaDAO asistenciaDAO;
+    private TableRowSorter<TableModel> sorter;
 
     public EmpleadosController(EmpleadosPanel empleadosPanel) {
         this.empleadosPanel = empleadosPanel;
@@ -37,6 +43,7 @@ public class EmpleadosController {
         empleadosPanel.btnModificar.addActionListener(e -> modificarEmpleado());
         empleadosPanel.btnEliminar.addActionListener(e -> eliminarEmpleado());
         empleadosPanel.btnRegistrarAsis.addActionListener(e -> registrarAsistencia());
+        configurarBuscador();
     }
     
     public void cargarTabla(){
@@ -52,7 +59,43 @@ public class EmpleadosController {
                 e.getSalario()
             });
         }
+        empleadosPanel.tbEmpleados.setRowHeight(30);
     }
+    
+    private void configurarBuscador() {
+
+        sorter = new TableRowSorter<>(empleadosPanel.tbEmpleados.getModel());
+        empleadosPanel.tbEmpleados.setRowSorter(sorter);
+
+        empleadosPanel.inputBuscar.getDocument().addDocumentListener(new DocumentListener() {
+            @Override
+            public void insertUpdate(DocumentEvent e) {
+                filtrarPorDni();
+            }
+
+            @Override
+            public void removeUpdate(DocumentEvent e) {
+                filtrarPorDni();
+            }
+
+            @Override
+            public void changedUpdate(DocumentEvent e) {
+                filtrarPorDni();
+            }
+        });
+    }
+
+    private void filtrarPorDni() {
+        String texto = empleadosPanel.inputBuscar.getText().trim();
+
+        if (texto.isEmpty()) {
+            sorter.setRowFilter(null); // Quitar filtro
+            return;
+        }
+
+        sorter.setRowFilter(RowFilter.regexFilter("(?i)" + texto, 1)); 
+    }
+
     
     private void agregarEmpleado(){
         AgregarEmpView agregarEmpView = new AgregarEmpView();

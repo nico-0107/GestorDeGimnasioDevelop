@@ -8,10 +8,14 @@ import Modelo.Asistencia;
 import Modelo.AsistenciaDAO;
 import Modelo.Empleado;
 import Vista.EmpAsis.RegistrarAsisEmpView;
+import java.awt.Color;
+import java.awt.Component;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 import javax.swing.JOptionPane;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -117,5 +121,64 @@ public class RegistrarAsisController {
                     sdfFecha.format(a.getFecha())
             });
         }
+        vista.tbAsistenciaEmp.setRowHeight(30);
+        aplicarColoresAsistencia();
     }
+    
+    private void aplicarColoresAsistencia() {
+    vista.tbAsistenciaEmp.setDefaultRenderer(Object.class, new DefaultTableCellRenderer() {
+
+        @Override
+        public Component getTableCellRendererComponent(JTable table, Object value,
+                boolean isSelected, boolean hasFocus, int row, int column) {
+
+            Component c = super.getTableCellRendererComponent(table, value, isSelected, hasFocus, row, column);
+
+            if (column == 2) {
+                String estado = table.getValueAt(row, 2).toString();
+
+                if (!isSelected) {
+                    if (estado.equalsIgnoreCase("Hora no registrada")) {
+                        c.setBackground(new Color(255, 182, 179)); // rojo suave
+                    }
+                    else {
+                        c.setBackground(new Color(189, 231, 189));
+                    }
+                    c.setForeground(Color.BLACK);
+                } else {
+                    c.setBackground(new Color(184, 207, 229)); // azul selección
+                }
+
+                return c;
+            }
+            if (column == 3) {
+                String estado = table.getValueAt(row, 3).toString();
+
+                if (!isSelected) {
+                    if (estado.equalsIgnoreCase("Hora no registrada")) {
+                        c.setBackground(new Color(255, 182, 179)); // rojo suave
+                    }
+                    else {
+                        c.setBackground(new Color(189, 231, 189));
+                    }
+                    c.setForeground(Color.BLACK);
+                } else {
+                    c.setBackground(new Color(184, 207, 229)); // azul selección
+                }
+
+                return c;
+            }
+            
+            if (!isSelected) {
+                c.setBackground(Color.WHITE);
+                c.setForeground(Color.BLACK);
+            } else {
+                c.setBackground(new Color(184, 207, 229));
+            }
+
+            return c;
+        }
+    });
+}
+
 }

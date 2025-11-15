@@ -1,4 +1,4 @@
-SOC001;71083088;th|;gsd;aefas;31/10/2025;Inactivo
-SOC002;71283912;uylk;hjlkh;khjk;31/10/2025;Inactivo
-SOC003;71283878;lucy;mallma;lucy@gmail.com;31/10/2025;Inactivo
-SOC004;71283078;Aaron;Bejar;haria.bejar@gmail.com;01/11/2025;Inactivo
+SOC001;71083088;th|;gsd;aefas;31/10/2025;inactivo
+SOC002;71283912;uylk;hjlkh;khjk;31/10/2025;inactivo
+SOC003;71283878;lucy;mallma;lucy@gmail.com;31/10/2025;inactivo
+SOC004;71283078;Aaron;Bejar;haria.bejar@gmail.com;01/11/2025;activo

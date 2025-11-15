@@ -35,10 +35,15 @@ public class MembresiasPanel extends javax.swing.JPanel {
         btnHabilitar = new javax.swing.JButton();
         btnDeshabilitar = new javax.swing.JButton();
         btnHorarios = new javax.swing.JButton();
+        inputBuscar = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
+
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Century Gothic", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("MEMBRESÍAS");
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(42, 34, 172, 34));
 
         tbMembresias.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -61,58 +66,29 @@ public class MembresiasPanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(tbMembresias);
 
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(42, 176, 754, 477));
+
         btnAgregar.setText("Agregar");
+        add(btnAgregar, new org.netbeans.lib.awtextra.AbsoluteConstraints(42, 86, -1, -1));
 
         btnModificar.setText("Modificar");
+        add(btnModificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 86, -1, -1));
 
         btnEliminar.setText("Eliminar");
+        add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 86, -1, -1));
 
         btnHabilitar.setText("Habilitar");
+        add(btnHabilitar, new org.netbeans.lib.awtextra.AbsoluteConstraints(326, 86, -1, -1));
 
         btnDeshabilitar.setText("Deshabilitar");
+        add(btnDeshabilitar, new org.netbeans.lib.awtextra.AbsoluteConstraints(419, 86, -1, -1));
 
         btnHorarios.setText("Horarios");
+        add(btnHorarios, new org.netbeans.lib.awtextra.AbsoluteConstraints(533, 86, -1, -1));
+        add(inputBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 130, 140, 30));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(42, 42, 42)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(btnAgregar)
-                        .addGap(33, 33, 33)
-                        .addComponent(btnModificar)
-                        .addGap(39, 39, 39)
-                        .addComponent(btnEliminar)
-                        .addGap(38, 38, 38)
-                        .addComponent(btnHabilitar)
-                        .addGap(35, 35, 35)
-                        .addComponent(btnDeshabilitar)
-                        .addGap(35, 35, 35)
-                        .addComponent(btnHorarios))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 754, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(40, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(34, 34, 34)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnAgregar)
-                    .addComponent(btnModificar)
-                    .addComponent(btnEliminar)
-                    .addComponent(btnHabilitar)
-                    .addComponent(btnDeshabilitar)
-                    .addComponent(btnHorarios))
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 525, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(27, Short.MAX_VALUE))
-        );
+        jLabel2.setText("Buscar por nombre :");
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 136, 120, 20));
     }// </editor-fold>//GEN-END:initComponents
 
 
@@ -123,7 +99,9 @@ public class MembresiasPanel extends javax.swing.JPanel {
     public javax.swing.JButton btnHabilitar;
     public javax.swing.JButton btnHorarios;
     public javax.swing.JButton btnModificar;
+    public javax.swing.JTextField inputBuscar;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
     public javax.swing.JTable tbMembresias;
     // End of variables declaration//GEN-END:variables

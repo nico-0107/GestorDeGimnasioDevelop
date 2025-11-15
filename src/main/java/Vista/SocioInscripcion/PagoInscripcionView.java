@@ -5,26 +5,29 @@
 package Vista.SocioInscripcion;
 
 import javax.swing.ImageIcon;
+import javax.swing.JDialog;
 import javax.swing.JFrame;
 
 /**
  *
  * @author ARIAN BEJAR
  */
-public class PagoInscripcionView extends javax.swing.JFrame {
+public class PagoInscripcionView extends javax.swing.JDialog {
 
     /**
      * Creates new form PagoInscripcionView
      */
-    public PagoInscripcionView() {
-        initComponents();
-        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-        setSize(400, 600); // 👉 dimensiones exactas ancho x alto
-        setResizable(false);
-        this.setLocationRelativeTo(null);
-        this.setIconImage(new ImageIcon(getClass().getResource("/Images/logopequeño.jpg")).getImage());
-        this.setTitle("Gestión Gym Esparta");
-    }
+    public PagoInscripcionView(JFrame parent) {
+    super(parent, "Pago de Inscripción", true); // true = modal
+    initComponents();
+    setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
+    setSize(465, 600);
+    setResizable(false);
+    setLocationRelativeTo(parent);
+    setIconImage(new ImageIcon(getClass().getResource("/Images/logopequeño.jpg")).getImage());
+    setTitle("Gestión Gym Esparta");
+}
+
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -37,203 +40,124 @@ public class PagoInscripcionView extends javax.swing.JFrame {
 
         jComboBox2 = new javax.swing.JComboBox<>();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tbPagos = new javax.swing.JTable();
         lblUsuarios = new javax.swing.JLabel();
         lblUsuarios2 = new javax.swing.JLabel();
         lblUsuarios3 = new javax.swing.JLabel();
         lblUsuarios4 = new javax.swing.JLabel();
         lblUsuarios5 = new javax.swing.JLabel();
-        lblUsuarios8 = new javax.swing.JLabel();
-        lblUsuarios7 = new javax.swing.JLabel();
-        lblUsuarios6 = new javax.swing.JLabel();
+        lbMontoPagado = new javax.swing.JLabel();
+        lbPrecio = new javax.swing.JLabel();
+        lbFecha = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
         jPanel1 = new javax.swing.JPanel();
-        lblUsuarios9 = new javax.swing.JLabel();
+        lbMostrarPago = new javax.swing.JLabel();
         lblUsuarios10 = new javax.swing.JLabel();
         lblUsuarios11 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jComboBox1 = new javax.swing.JComboBox<>();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        inputImporte = new javax.swing.JTextField();
+        cbOpcionTipoPago = new javax.swing.JComboBox<>();
+        btnAnularPago = new javax.swing.JButton();
+        btnAgregarPago = new javax.swing.JButton();
         jSeparator2 = new javax.swing.JSeparator();
 
         jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tbPagos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null}
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
             },
             new String [] {
-                "ID", "Importe ", "Fecha Pago"
+                "ID", "Importe ", "Fecha Pago", "Estado"
             }
-        ));
-        jScrollPane1.setViewportView(jTable1);
+        ) {
+            boolean[] canEdit = new boolean [] {
+                true, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane1.setViewportView(tbPagos);
+
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 371, 450, 230));
 
         lblUsuarios.setFont(new java.awt.Font("Century Gothic", 1, 24)); // NOI18N
         lblUsuarios.setForeground(new java.awt.Color(0, 0, 0));
-        lblUsuarios.setText("Realizar pago");
+        lblUsuarios.setText("REALIZAR PAGO");
+        getContentPane().add(lblUsuarios, new org.netbeans.lib.awtextra.AbsoluteConstraints(21, 6, -1, -1));
 
         lblUsuarios2.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
         lblUsuarios2.setForeground(new java.awt.Color(0, 0, 0));
         lblUsuarios2.setText("Datos de membresía");
+        getContentPane().add(lblUsuarios2, new org.netbeans.lib.awtextra.AbsoluteConstraints(21, 49, -1, -1));
 
         lblUsuarios3.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
         lblUsuarios3.setForeground(new java.awt.Color(0, 0, 0));
         lblUsuarios3.setText("Fecha:");
+        getContentPane().add(lblUsuarios3, new org.netbeans.lib.awtextra.AbsoluteConstraints(39, 84, -1, -1));
 
         lblUsuarios4.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
         lblUsuarios4.setForeground(new java.awt.Color(0, 0, 0));
         lblUsuarios4.setText("Precio");
+        getContentPane().add(lblUsuarios4, new org.netbeans.lib.awtextra.AbsoluteConstraints(39, 115, -1, -1));
 
         lblUsuarios5.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
         lblUsuarios5.setForeground(new java.awt.Color(0, 0, 0));
         lblUsuarios5.setText("Total pagado:");
+        getContentPane().add(lblUsuarios5, new org.netbeans.lib.awtextra.AbsoluteConstraints(39, 146, -1, -1));
 
-        lblUsuarios8.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
-        lblUsuarios8.setForeground(new java.awt.Color(0, 0, 0));
-        lblUsuarios8.setText("a");
+        lbMontoPagado.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        lbMontoPagado.setForeground(new java.awt.Color(0, 0, 0));
+        lbMontoPagado.setText("----");
+        getContentPane().add(lbMontoPagado, new org.netbeans.lib.awtextra.AbsoluteConstraints(151, 146, 112, -1));
 
-        lblUsuarios7.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
-        lblUsuarios7.setForeground(new java.awt.Color(0, 0, 0));
-        lblUsuarios7.setText("a");
+        lbPrecio.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        lbPrecio.setForeground(new java.awt.Color(0, 0, 0));
+        lbPrecio.setText("----");
+        getContentPane().add(lbPrecio, new org.netbeans.lib.awtextra.AbsoluteConstraints(151, 111, 112, -1));
 
-        lblUsuarios6.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
-        lblUsuarios6.setForeground(new java.awt.Color(0, 0, 0));
-        lblUsuarios6.setText("a");
+        lbFecha.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        lbFecha.setForeground(new java.awt.Color(0, 0, 0));
+        lbFecha.setText("----");
+        getContentPane().add(lbFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(151, 80, 112, -1));
+        getContentPane().add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 177, 450, 10));
 
-        lblUsuarios9.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
-        lblUsuarios9.setForeground(new java.awt.Color(0, 0, 0));
-        lblUsuarios9.setText("Sin pagar");
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(15, 15, 15)
-                .addComponent(lblUsuarios9, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(37, Short.MAX_VALUE)
-                .addComponent(lblUsuarios9, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(30, 30, 30))
-        );
+        lbMostrarPago.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
+        lbMostrarPago.setForeground(new java.awt.Color(0, 0, 0));
+        lbMostrarPago.setText("Sin pagar");
+        jPanel1.add(lbMostrarPago, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 170, 33));
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 70, 180, 90));
 
         lblUsuarios10.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
         lblUsuarios10.setForeground(new java.awt.Color(0, 0, 0));
         lblUsuarios10.setText("Importe");
+        getContentPane().add(lblUsuarios10, new org.netbeans.lib.awtextra.AbsoluteConstraints(41, 201, -1, -1));
 
         lblUsuarios11.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
         lblUsuarios11.setForeground(new java.awt.Color(0, 0, 0));
         lblUsuarios11.setText("Tipo de pago");
+        getContentPane().add(lblUsuarios11, new org.netbeans.lib.awtextra.AbsoluteConstraints(41, 244, -1, -1));
+        getContentPane().add(inputImporte, new org.netbeans.lib.awtextra.AbsoluteConstraints(151, 199, 263, -1));
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Efectivo", "Tarjeta de crédito", "Tarjeta de débito", "Transferencia bancaria", "Yape / Plin / Billetera digital" }));
+        cbOpcionTipoPago.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Efectivo", "Tarjeta de crédito", "Tarjeta de débito", "Transferencia bancaria", "Yape / Plin / Billetera digital" }));
+        getContentPane().add(cbOpcionTipoPago, new org.netbeans.lib.awtextra.AbsoluteConstraints(149, 241, 265, -1));
 
-        jButton1.setText("Eliminar pago");
+        btnAnularPago.setText("Anular pago");
+        getContentPane().add(btnAnularPago, new org.netbeans.lib.awtextra.AbsoluteConstraints(323, 335, 121, 30));
 
-        jButton2.setText("Agregar pago");
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(21, 21, 21)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblUsuarios)
-                            .addComponent(lblUsuarios2)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(39, 39, 39)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblUsuarios3)
-                            .addComponent(lblUsuarios4)
-                            .addComponent(lblUsuarios5))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(lblUsuarios7, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 112, Short.MAX_VALUE)
-                            .addComponent(lblUsuarios6, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(lblUsuarios8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                .addGap(18, 18, 18)
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(16, 16, 16))
-            .addComponent(jSeparator1)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                        .addGap(41, 41, 41)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(lblUsuarios10)
-                                .addGap(57, 57, 57)
-                                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 263, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(lblUsuarios11)
-                                .addGap(18, 18, 18)
-                                .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
-                .addContainerGap(36, Short.MAX_VALUE))
-            .addComponent(jSeparator2, javax.swing.GroupLayout.Alignment.TRAILING)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(lblUsuarios)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(lblUsuarios2)
-                        .addGap(8, 8, 8)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(lblUsuarios3)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(lblUsuarios4)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(lblUsuarios5))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(lblUsuarios6)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(lblUsuarios7)
-                                .addGap(16, 16, 16)
-                                .addComponent(lblUsuarios8))))
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(12, 12, 12)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblUsuarios10)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblUsuarios11)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, 32, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 7, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(17, 17, 17)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
+        btnAgregarPago.setText("Agregar pago");
+        getContentPane().add(btnAgregarPago, new org.netbeans.lib.awtextra.AbsoluteConstraints(284, 273, 130, 32));
+        getContentPane().add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 311, 450, 7));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -268,22 +192,25 @@ public class PagoInscripcionView extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new PagoInscripcionView().setVisible(true);
+                
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public javax.swing.JButton jButton1;
-    public javax.swing.JButton jButton2;
-    public javax.swing.JComboBox<String> jComboBox1;
+    public javax.swing.JButton btnAgregarPago;
+    public javax.swing.JButton btnAnularPago;
+    public javax.swing.JComboBox<String> cbOpcionTipoPago;
+    public javax.swing.JTextField inputImporte;
     private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
-    public javax.swing.JTable jTable1;
-    public javax.swing.JTextField jTextField1;
+    public javax.swing.JLabel lbFecha;
+    public javax.swing.JLabel lbMontoPagado;
+    public javax.swing.JLabel lbMostrarPago;
+    public javax.swing.JLabel lbPrecio;
     private javax.swing.JLabel lblUsuarios;
     private javax.swing.JLabel lblUsuarios10;
     private javax.swing.JLabel lblUsuarios11;
@@ -291,9 +218,6 @@ public class PagoInscripcionView extends javax.swing.JFrame {
     private javax.swing.JLabel lblUsuarios3;
     private javax.swing.JLabel lblUsuarios4;
     private javax.swing.JLabel lblUsuarios5;
-    public javax.swing.JLabel lblUsuarios6;
-    public javax.swing.JLabel lblUsuarios7;
-    public javax.swing.JLabel lblUsuarios8;
-    public javax.swing.JLabel lblUsuarios9;
+    public javax.swing.JTable tbPagos;
     // End of variables declaration//GEN-END:variables
 }
