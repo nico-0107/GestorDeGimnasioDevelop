@@ -1,9 +1,7 @@
 Vista\ViewPrincipal$2.class
 Vista\ViewPrincipal.class
 Vista\Inventario\InventarioPanel$2.class
-Vista\SocioInscripcion\AñadirUsuarioView$2.class
 Vista\RegistrarUserView$1.class
-Vista\SocioInscripcion\RenovarUsuariosMenu$3.class
 Modelo\Asistencia.class
 Vista\MemHorario\MembresiasPanel$1.class
 Vista\EmpAsis\RegistrarAsisEmpView.class
@@ -16,6 +14,7 @@ Vista\MemHorario\HorariosMemView$1.class
 Modelo\InscripcionDAO.class
 Modelo\ListaEmpleados$Nodo.class
 Controlador\SocioInscrip\PagoInscripcionController.class
+Style\Estilo$1.class
 Controlador\SocioInscrip\SocioController$1.class
 Vista\Inicio\InicioPanel$1.class
 Vista\MemHorario\MembresiasPanel.class
@@ -24,7 +23,7 @@ Vista\SocioInscripcion\PagoInscripcionView$1.class
 Vista\EmpAsis\EmpleadosPanel$1.class
 Controlador\MemHorario\HorariosMemController.class
 Vista\Inventario\InventarioPanel$EstadoCellRenderer.class
-Vista\SocioInscripcion\SociosPanel$4.class
+Style\Estilo.class
 Vista\SocioInscripcion\InscripcionView.class
 tempRunner\App.class
 Vista\LoginView$2.class
@@ -39,7 +38,7 @@ Controlador\SocioInscrip\SocioController.class
 Vista\Inicio\InicioPanel.class
 Modelo\ListaEmpleados.class
 Vista\Inventario\InventarioPanel$4.class
-Vista\SocioInscripcion\RenovarUsuariosMenu.class
+Style\Estilo$2.class
 Vista\ViewPrincipal$7.class
 Modelo\Objeto.class
 Modelo\ListaClientes.class
@@ -52,7 +51,6 @@ Vista\Inventario\InventarioPanel.class
 Controlador\SocioInscrip\AgregarSocioController.class
 Vista\SocioInscripcion\AgregarSocioView$1.class
 Vista\SocioInscripcion\ModificarSocioView$1.class
-Vista\SocioInscripcion\RenovarUsuariosMenu$1.class
 Controlador\MemHorario\MembresiaController.class
 Modelo\Persona.class
 Vista\LoginView$1.class
@@ -74,6 +72,7 @@ Controlador\MemHorario\MembresiaController$2.class
 Vista\MemHorario\AgregarMemView$1.class
 Controlador\SocioInscrip\PagoInscripcionController$1.class
 Vista\ViewPrincipal$1.class
+Style\Estilo$3.class
 Vista\SocioInscripcion\InscripcionView$1.class
 Controlador\EmpAsis\AsistenciasController.class
 Controlador\PrincipalController.class
@@ -95,7 +94,6 @@ Modelo\ListaClientes$Nodo.class
 Vista\SocioInscripcion\PagoInscripcionView.class
 Controlador\SocioInscrip\SocioController$5.class
 Vista\Inventario\AñadirObjetoMenu$4.class
-Vista\SocioInscripcion\RenovarUsuariosMenu$4.class
 Controlador\EmpAsis\ModificarEmpController.class
 Modelo\HorarioDAO.class
 Vista\EmpAsis\ModificarEmpView.class
@@ -105,9 +103,7 @@ Modelo\Usuario.class
 Vista\Inventario\ModificarObjetoMenu$2.class
 Controlador\EmpAsis\RegistrarAsisController.class
 Vista\EmpAsis\AgregarEmpView.class
-Vista\SocioInscripcion\AñadirUsuarioView$1.class
 Vista\Inventario\InventarioPanel$6.class
-Vista\SocioInscripcion\RenovarUsuariosMenu$2.class
 Modelo\UsuarioDAO.class
 Vista\EmpAsis\RegistrarAsisEmpView$1.class
 Vista\ViewPrincipal$6.class
@@ -130,16 +126,15 @@ Controlador\InfoAdmin\DataAdminController.class
 Vista\EmpAsis\AgregarEmpView$1.class
 Modelo\Cliente.class
 Vista\EmpAsis\AsistenciaPanel.class
-Vista\SocioInscripcion\AñadirUsuarioView.class
 Modelo\Socio.class
 Vista\Inventario\AñadirObjetoMenu$2.class
 Modelo\Inscripcion.class
 Vista\Inicio\InicioPanel$2.class
 Vista\SocioInscripcion\SociosPanel$2.class
-Vista\SocioInscripcion\AñadirUsuarioView$3.class
 Vista\Inicio\InicioPanel$3.class
 Modelo\ListaObjetos$Nodo.class
 Controlador\EmpAsis\EmpleadosController.class
+Controlador\SocioInscrip\SocioController$6.class
 Vista\Inventario\InventarioPanel$1.class
 Vista\EmpAsis\ModificarEmpView$1.class
 Controlador\RegisterController.class

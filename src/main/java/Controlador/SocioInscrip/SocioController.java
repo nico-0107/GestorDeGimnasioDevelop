@@ -21,8 +21,13 @@ import java.text.SimpleDateFormat;
 import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
+import javax.swing.RowFilter;
+import javax.swing.event.DocumentEvent;
+import javax.swing.event.DocumentListener;
 import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableModel;
+import javax.swing.table.TableRowSorter;
 
 /**
  *
@@ -33,6 +38,7 @@ public class SocioController {
     private ViewPrincipal principalView;
     private SocioDAO socioDAO;
     private InscripcionDAO inscripcionDAO;
+    private TableRowSorter<TableModel> sorter;
 
     public SocioController(SociosPanel sociosPanel ,ViewPrincipal principalView) {
         this.sociosPanel = sociosPanel;
@@ -49,7 +55,6 @@ public class SocioController {
         sociosPanel.btnModificar.addActionListener(e -> modificarSocio());
         sociosPanel.btnEliminar.addActionListener(e -> eliminarSocio());
         sociosPanel.btnAsignarMem.addActionListener(e -> asignarMembresia());
-        sociosPanel.btnBuscar.addActionListener(e -> buscarSocio());
         sociosPanel.inputDni.addKeyListener(new KeyAdapter() {
             @Override
             public void keyReleased(KeyEvent e) {
@@ -59,6 +64,41 @@ public class SocioController {
                 }
             }
         });
+        configurarBuscador();
+    }
+    
+    private void configurarBuscador() {
+
+        sorter = new TableRowSorter<>(sociosPanel.tbSocios.getModel());
+        sociosPanel.tbSocios.setRowSorter(sorter);
+
+        sociosPanel.inputDni.getDocument().addDocumentListener(new DocumentListener() {
+            @Override
+            public void insertUpdate(DocumentEvent e) {
+                filtrarPorDni();
+            }
+
+            @Override
+            public void removeUpdate(DocumentEvent e) {
+                filtrarPorDni();
+            }
+
+            @Override
+            public void changedUpdate(DocumentEvent e) {
+                filtrarPorDni();
+            }
+        });
+    }
+
+    private void filtrarPorDni() {
+        String texto = sociosPanel.inputDni.getText().trim();
+
+        if (texto.isEmpty()) {
+            sorter.setRowFilter(null); // Quitar filtro
+            return;
+        }
+
+        sorter.setRowFilter(RowFilter.regexFilter("(?i)" + texto, 1)); 
     }
     
     public void cargarTabla(){
@@ -232,37 +272,6 @@ public class SocioController {
             JOptionPane.showMessageDialog(null, "Ocurrió un error ", "Error", JOptionPane.ERROR_MESSAGE);
         }
     }
-    
-    public void buscarSocio() {
-      
-        String dni = sociosPanel.inputDni.getText().trim();
-        DefaultTableModel model = (DefaultTableModel) sociosPanel.tbSocios.getModel();
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-
-        // Validar campo vacío
-        if (dni.isEmpty()) {
-            JOptionPane.showMessageDialog(sociosPanel, "Por favor, ingrese un DNI para buscar.");
-            return;
-        }
-
-        // Buscar el socio directamente por DNI (sin recorrer toda la lista)
-        Socio socioEncontrado = socioDAO.buscarPorDni(dni);
-
-        if (socioEncontrado != null) {
-            limpiarTabla();
-            model.addRow(new Object[]{
-                socioEncontrado.getIdSocio(),
-                socioEncontrado.getDNI(),
-                socioEncontrado.getNombres(),
-                socioEncontrado.getApellidos(),
-                socioEncontrado.getCorreo(),
-                sdf.format(socioEncontrado.getFechaCreacion()),
-                socioEncontrado.getEstado()
-            });
-        } else {
-            JOptionPane.showMessageDialog(sociosPanel, "No se encontró ningún socio con el DNI ingresado.");
-        }
-}
     
     private void limpiarTabla() {
         DefaultTableModel model = (DefaultTableModel) sociosPanel.tbSocios.getModel();
