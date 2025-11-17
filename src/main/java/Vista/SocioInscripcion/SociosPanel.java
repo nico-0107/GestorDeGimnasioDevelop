@@ -39,16 +39,17 @@ public class SociosPanel extends javax.swing.JPanel {
     
     public SociosPanel() {
         initComponents();
-
-        Estilo.textFieldModerno(inputDni);
         
+        inicializarEstilo();
+    }
+    
+    private void inicializarEstilo(){
+        Estilo.textFieldModerno(inputDni);
         Estilo.tablaHeaderModerno(tbSocios);
-
         Estilo.botonModerno(btnAgregar,   new Color(33, 150, 243));  // Azul moderno
         Estilo.botonModerno(btnModificar, new Color(255, 152, 0));   // Naranja
         Estilo.botonModerno(btnEliminar,  new Color(244, 67, 54));
         Estilo.botonModerno(btnAsignarMem, new Color(0, 184, 148));
-
     }
     
     
@@ -70,9 +71,8 @@ public class SociosPanel extends javax.swing.JPanel {
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lblUsuarios.setFont(new java.awt.Font("Century Gothic", 1, 36)); // NOI18N
-        lblUsuarios.setForeground(new java.awt.Color(0, 0, 0));
         lblUsuarios.setText("SOCIOS DEL GIMNASIO");
-        add(lblUsuarios, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 50, -1, -1));
+        add(lblUsuarios, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 50, 520, -1));
 
         btnAgregar.setText("New");
         btnAgregar.setFocusPainted(false);

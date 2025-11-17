@@ -7,6 +7,7 @@ Vista\MemHorario\MembresiasPanel$1.class
 Vista\EmpAsis\RegistrarAsisEmpView.class
 Vista\Inicio\InicioPanel$4.class
 Vista\Inventario\ModificarObjetoMenu$1.class
+Style\Estilo$4.class
 Vista\ViewPrincipal$5.class
 Modelo\AsistenciaDAO.class
 Modelo\PagoDAO.class
@@ -119,6 +120,7 @@ Controlador\SocioInscrip\InscripcionController.class
 Vista\SocioInscripcion\PagoInscripcionView$2.class
 Vista\SocioInscripcion\SociosPanel$3.class
 Modelo\EmpleadoDAO.class
+Style\Estilo$5.class
 Modelo\Membresia.class
 Vista\Inventario\AñadirObjetoMenu.class
 Vista\MemHorario\ModificarMemView.class
@@ -126,6 +128,7 @@ Controlador\InfoAdmin\DataAdminController.class
 Vista\EmpAsis\AgregarEmpView$1.class
 Modelo\Cliente.class
 Vista\EmpAsis\AsistenciaPanel.class
+Vista\Inventario\InventarioPanel$7.class
 Modelo\Socio.class
 Vista\Inventario\AñadirObjetoMenu$2.class
 Modelo\Inscripcion.class

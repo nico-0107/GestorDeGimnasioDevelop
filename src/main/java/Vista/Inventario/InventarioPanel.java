@@ -4,6 +4,7 @@
  */
 package Vista.Inventario;
 
+import Style.Estilo;
 import javax.swing.JDialog;
 import java.awt.Color;
 import java.awt.Component;
@@ -52,6 +53,16 @@ public class InventarioPanel extends javax.swing.JPanel {
                 filtrarObjetos();
             }
         });
+        
+        inicializarEstilos();
+    }
+    
+    private void inicializarEstilos(){
+        Estilo.textFieldModerno(Buscador);
+        Estilo.tablaHeaderModerno(TablaObjetos);
+        Estilo.botonModerno(BotonAñadirObjeto,   new Color(33, 150, 243));  // Azul moderno
+        Estilo.botonModerno(BotonModificarObjeto, new Color(255, 152, 0));   // Naranja
+
     }
 
     private void cargarObjetosDesdeArchivo() {
@@ -169,15 +180,16 @@ public class InventarioPanel extends javax.swing.JPanel {
         jLabel2 = new javax.swing.JLabel();
         Buscador = new javax.swing.JTextField();
         ComboboxTipo = new javax.swing.JComboBox<>();
+        jLabel1 = new javax.swing.JLabel();
 
         jButton2.setText("jButton1");
 
         setPreferredSize(new java.awt.Dimension(836, 680));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        lblUsuarios.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        lblUsuarios.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         lblUsuarios.setText("INVENTARIO DEL GIMNASIO");
-        add(lblUsuarios, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, -1, -1));
+        add(lblUsuarios, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 570, -1));
 
         TablaObjetos.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         TablaObjetos.setModel(new javax.swing.table.DefaultTableModel(
@@ -249,36 +261,46 @@ public class InventarioPanel extends javax.swing.JPanel {
 
         add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, 783, 459));
 
-        BotonModificarObjeto.setText("MODIFICAR");
+        BotonModificarObjeto.setText("Edit");
         BotonModificarObjeto.setFocusPainted(false);
         BotonModificarObjeto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BotonModificarObjetoActionPerformed(evt);
             }
         });
-        add(BotonModificarObjeto, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 90, 115, 31));
+        add(BotonModificarObjeto, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 80, 90, 40));
 
-        BotonAñadirObjeto.setText("AÑADIR OBJETO");
+        BotonAñadirObjeto.setText("New");
         BotonAñadirObjeto.setFocusPainted(false);
         BotonAñadirObjeto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BotonAñadirObjetoActionPerformed(evt);
             }
         });
-        add(BotonAñadirObjeto, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, 127, 31));
+        add(BotonAñadirObjeto, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 81, 90, 40));
 
-        jLabel2.setText("BUSCAR POR N.SERIE");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 100, -1, -1));
+        jLabel2.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        jLabel2.setText("Buscar por n. serie: ");
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 100, -1, -1));
 
         Buscador.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BuscadorActionPerformed(evt);
             }
         });
-        add(Buscador, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 90, 184, 30));
+        add(Buscador, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 90, 140, 30));
 
         ComboboxTipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Todos", "Máquina", "Disco", "Mancuerna" }));
-        add(ComboboxTipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 90, 114, 32));
+        ComboboxTipo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ComboboxTipoActionPerformed(evt);
+            }
+        });
+        add(ComboboxTipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 90, 114, 32));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/inputBuscar1.png"))); // NOI18N
+        jLabel1.setText("k");
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 80, 200, 50));
     }// </editor-fold>//GEN-END:initComponents
 
     private void BotonModificarObjetoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonModificarObjetoActionPerformed
@@ -321,6 +343,10 @@ public class InventarioPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_BuscadorActionPerformed
 
+    private void ComboboxTipoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComboboxTipoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ComboboxTipoActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton BotonAñadirObjeto;
     public javax.swing.JButton BotonModificarObjeto;
@@ -329,6 +355,7 @@ public class InventarioPanel extends javax.swing.JPanel {
     public javax.swing.JTable TablaObjetos;
     private javax.swing.JButton jButton2;
     private com.toedter.calendar.JDayChooser jDayChooser1;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblUsuarios;

@@ -1,7 +1,5 @@
-MEM001;Básica;29.9;Mensual;1;0;2025-10-25;Activa
-MEM002;Premium;79.9;Anual;12;0;2025-10-25;Activa
-MEM003;Visitas;20.0;Diario;0;1;2025-10-26;Activa
-MEM004;daf;120.0;Bimestral;2;0;2025-11-07;Activa
-MEM005;TRI;101.0;Semestral;6;0;2025-11-08;Activa
-MEM006;trimestral;50.0;Trimestral;3;0;2025-11-08;Activa
-MEM007;erhe;74.0;Bimestral;2;0;2025-11-08;Activa
+MEM001;Mensual;89.0;Mensual;1;0;2025-11-16;Activa
+MEM002;Bimestral;169.0;Bimestral;2;0;2025-11-16;Activa
+MEM003;Trimestral;449.0;Trimestral;3;0;2025-11-16;Activa
+MEM004;Semetral;679.0;Semestral;6;0;2025-11-16;Activa
+MEM005;Anual;1199.0;Anual;12;0;2025-11-16;Activa

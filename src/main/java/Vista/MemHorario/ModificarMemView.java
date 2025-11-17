@@ -4,6 +4,8 @@
  */
 package Vista.MemHorario;
 
+import Style.Estilo;
+import java.awt.Color;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 
@@ -22,6 +24,7 @@ public class ModificarMemView extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
         this.setIconImage(new ImageIcon(getClass().getResource("/Images/logopequeño.jpg")).getImage());
         this.setTitle("Gestión Gym Esparta");
+        Estilo.botonModerno(btnModificar, new Color(255, 152, 0));   // Naranja
     }
 
     /**
@@ -62,7 +65,7 @@ public class ModificarMemView extends javax.swing.JFrame {
         jLabel5.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
         jLabel5.setText("Días");
 
-        btnModificar.setText("Modificar");
+        btnModificar.setText("Edit");
 
         cbNewTipoMem.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Diario", "Mensual", "Bimestral", "Semestral", "Anual" }));
 

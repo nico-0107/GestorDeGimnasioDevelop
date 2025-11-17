@@ -172,7 +172,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="btnAgregarHorario">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Agregar"/>
+        <Property name="text" type="java.lang.String" value="New"/>
       </Properties>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
@@ -180,7 +180,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="btnEliminarHorario">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Eliminar"/>
+        <Property name="text" type="java.lang.String" value="Delete"/>
       </Properties>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>

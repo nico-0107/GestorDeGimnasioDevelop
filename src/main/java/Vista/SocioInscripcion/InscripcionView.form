@@ -26,6 +26,14 @@
   </Layout>
   <SubComponents>
     <Component class="javax.swing.JSeparator" name="jSeparator1">
+      <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="1e" green="1d" red="5d" type="rgb"/>
+        </Property>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="1e" green="1d" red="5d" type="rgb"/>
+        </Property>
+      </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
           <AbsoluteConstraints x="0" y="197" width="655" height="10"/>
@@ -385,14 +393,18 @@
     </Component>
     <Component class="javax.swing.JButton" name="btnAgregarIns">
       <Properties>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/Images/user-round-check.png"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Agregar inscripci&#xf3;n"/>
+        <Property name="iconTextGap" type="int" value="8"/>
       </Properties>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
       </AuxValues>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="460" y="320" width="174" height="35"/>
+          <AbsoluteConstraints x="444" y="320" width="200" height="40"/>
         </Constraint>
       </Constraints>
     </Component>
@@ -431,14 +443,18 @@
     </Container>
     <Component class="javax.swing.JButton" name="btnPagoMem">
       <Properties>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/Images/badge-dollar-sign.png"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Pago membres&#xed;a"/>
+        <Property name="iconTextGap" type="int" value="8"/>
       </Properties>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
       </AuxValues>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="336" y="399" width="146" height="30"/>
+          <AbsoluteConstraints x="260" y="390" width="190" height="40"/>
         </Constraint>
       </Constraints>
     </Component>
@@ -451,7 +467,7 @@
       </AuxValues>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="500" y="399" width="149" height="30"/>
+          <AbsoluteConstraints x="459" y="389" width="190" height="40"/>
         </Constraint>
       </Constraints>
     </Component>

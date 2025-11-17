@@ -41,6 +41,8 @@ public class AsistenciasController {
     private void configuracionInicial() {
         asistenciaPanel.inputDni.setVisible(false);
         asistenciaPanel.dateChoPorDia.setVisible(false);
+        asistenciaPanel.lbInputBuscar.setVisible(false);
+        
         asistenciaPanel.cbOpcionFiltro.setSelectedItem("Seleccionar");
         limpiarTabla();
     }
@@ -50,6 +52,7 @@ public class AsistenciasController {
             limpiarTabla();
             String opcion = asistenciaPanel.cbOpcionFiltro.getSelectedItem().toString();
             asistenciaPanel.inputDni.setVisible(opcion.equalsIgnoreCase("por dni"));
+            asistenciaPanel.lbInputBuscar.setVisible(true);
             asistenciaPanel.dateChoPorDia.setVisible(opcion.equalsIgnoreCase("por día"));
         });
 

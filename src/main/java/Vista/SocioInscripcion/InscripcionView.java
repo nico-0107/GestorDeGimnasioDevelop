@@ -5,6 +5,8 @@
 package Vista.SocioInscripcion;
 
 import Modelo.Membresia;
+import Style.Estilo;
+import java.awt.Color;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 
@@ -25,6 +27,15 @@ public class InscripcionView extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
         this.setIconImage(new ImageIcon(getClass().getResource("/Images/logopequeño.jpg")).getImage());
         this.setTitle("Gestión Gym Esparta");
+        
+        inicializarEstilos();
+    }
+    
+    private void inicializarEstilos(){
+        Estilo.botonModerno(btnAgregarIns,  new Color(33, 150, 243) );  // Azul moderno
+        Estilo.botonModerno(btnPagoMem, new Color(76, 175, 80));   // Naranja
+        Estilo.botonModerno(btnRenovarIns,  new Color(255, 152, 0));
+        Estilo.tablaHeaderSecundario(tbInscripciones);
     }
 
     /**
@@ -68,6 +79,9 @@ public class InscripcionView extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jSeparator1.setBackground(new java.awt.Color(93, 29, 30));
+        jSeparator1.setForeground(new java.awt.Color(93, 29, 30));
         getContentPane().add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 197, 655, 10));
 
         lblUsuarios.setFont(new java.awt.Font("Century Gothic", 1, 24)); // NOI18N
@@ -168,8 +182,10 @@ public class InscripcionView extends javax.swing.JFrame {
         getContentPane().add(lblUsuarios18, new org.netbeans.lib.awtextra.AbsoluteConstraints(246, 257, -1, -1));
         getContentPane().add(dateChoComienzo, new org.netbeans.lib.awtextra.AbsoluteConstraints(328, 254, 145, -1));
 
+        btnAgregarIns.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/user-round-check.png"))); // NOI18N
         btnAgregarIns.setText("Agregar inscripción");
-        getContentPane().add(btnAgregarIns, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 320, 174, 35));
+        btnAgregarIns.setIconTextGap(8);
+        getContentPane().add(btnAgregarIns, new org.netbeans.lib.awtextra.AbsoluteConstraints(444, 320, 200, 40));
 
         tbInscripciones.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -186,11 +202,13 @@ public class InscripcionView extends javax.swing.JFrame {
 
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 435, 655, 165));
 
+        btnPagoMem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/badge-dollar-sign.png"))); // NOI18N
         btnPagoMem.setText("Pago membresía");
-        getContentPane().add(btnPagoMem, new org.netbeans.lib.awtextra.AbsoluteConstraints(336, 399, 146, 30));
+        btnPagoMem.setIconTextGap(8);
+        getContentPane().add(btnPagoMem, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 390, 190, 40));
 
         btnRenovarIns.setText("Renovar inscripción");
-        getContentPane().add(btnRenovarIns, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 399, 149, 30));
+        getContentPane().add(btnRenovarIns, new org.netbeans.lib.awtextra.AbsoluteConstraints(459, 389, 190, 40));
 
         lbMontoMem.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
         lbMontoMem.setForeground(new java.awt.Color(0, 0, 0));

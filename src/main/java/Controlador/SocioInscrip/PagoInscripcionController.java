@@ -6,6 +6,8 @@ package Controlador.SocioInscrip;
 
 import Modelo.Inscripcion;
 import Modelo.InscripcionDAO;
+import Modelo.Membresia;
+import Modelo.MembresiaDAO;
 import Modelo.Pago;
 import Modelo.PagoDAO;
 import Vista.SocioInscripcion.PagoInscripcionView;
@@ -32,6 +34,7 @@ public class PagoInscripcionController {
     private InscripcionDAO inscripcionDAO;
     private Pago p;
     private PagoDAO pagoDAO;
+    private MembresiaDAO membresiaDAO;
 
     public PagoInscripcionController(PagoInscripcionView pagoInscripcionView, InscripcionController inscripcionController, Inscripcion i) {
         this.pagoInscripcionView = pagoInscripcionView;
@@ -40,6 +43,7 @@ public class PagoInscripcionController {
         this.p = new Pago();
         this.pagoDAO = PagoDAO.getInstancia();
         this.inscripcionDAO= InscripcionDAO.getInstancia();
+        this.membresiaDAO = MembresiaDAO.getInstancia();
         pagoDAO.cargarPagos();
         mostrarInscripcionSelect();
         inicializarEventos();
@@ -152,8 +156,6 @@ public class PagoInscripcionController {
 }
 
 
-
-    
     private void agregarPago() {
     try {
         // 🔄 1) Obtener la inscripción más actualizada desde archivo
@@ -162,6 +164,15 @@ public class PagoInscripcionController {
 
         if (insActual == null) {
             JOptionPane.showMessageDialog(null, "La inscripción no existe.", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        
+        Membresia m = membresiaDAO.buscarPorId(insActual.getIdMembresia());
+        
+        if (m == null) {
+            JOptionPane.showMessageDialog(null, "La membresía no existe o fue eliminada, no puede pagar la inscripción.", "Advertencia", JOptionPane.WARNING_MESSAGE);
+            i = insActual; // refrescar referencia
+            mostrarInscripcionSelect();
             return;
         }
 

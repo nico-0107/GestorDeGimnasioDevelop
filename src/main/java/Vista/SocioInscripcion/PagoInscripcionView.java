@@ -4,6 +4,8 @@
  */
 package Vista.SocioInscripcion;
 
+import Style.Estilo;
+import java.awt.Color;
 import javax.swing.ImageIcon;
 import javax.swing.JDialog;
 import javax.swing.JFrame;
@@ -18,16 +20,23 @@ public class PagoInscripcionView extends javax.swing.JDialog {
      * Creates new form PagoInscripcionView
      */
     public PagoInscripcionView(JFrame parent) {
-    super(parent, "Pago de Inscripción", true); // true = modal
-    initComponents();
-    setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
-    setSize(465, 600);
-    setResizable(false);
-    setLocationRelativeTo(parent);
-    setIconImage(new ImageIcon(getClass().getResource("/Images/logopequeño.jpg")).getImage());
-    setTitle("Gestión Gym Esparta");
-}
+        super(parent, "Pago de Inscripción", true); // true = modal
+        initComponents();
+        setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
+        setSize(465, 600);
+        setResizable(false);
+        setLocationRelativeTo(parent);
+        setIconImage(new ImageIcon(getClass().getResource("/Images/logopequeño.jpg")).getImage());
+        setTitle("Gestión Gym Esparta");
+        inicializarEstilos();
+    }
+    
+    private void inicializarEstilos(){
+        Estilo.botonModerno(btnAgregarPago,  new Color(33, 150, 243) );  // Azul moderno
+        Estilo.botonModerno(btnAnularPago,new Color(244, 67, 54));   // Naranja
 
+        Estilo.tablaHeaderSecundario(tbPagos);
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -127,6 +136,9 @@ public class PagoInscripcionView extends javax.swing.JDialog {
         lbFecha.setForeground(new java.awt.Color(0, 0, 0));
         lbFecha.setText("----");
         getContentPane().add(lbFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(151, 80, 112, -1));
+
+        jSeparator1.setBackground(new java.awt.Color(93, 29, 30));
+        jSeparator1.setForeground(new java.awt.Color(93, 29, 30));
         getContentPane().add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 177, 450, 10));
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -147,17 +159,23 @@ public class PagoInscripcionView extends javax.swing.JDialog {
         lblUsuarios11.setForeground(new java.awt.Color(0, 0, 0));
         lblUsuarios11.setText("Tipo de pago");
         getContentPane().add(lblUsuarios11, new org.netbeans.lib.awtextra.AbsoluteConstraints(41, 244, -1, -1));
-        getContentPane().add(inputImporte, new org.netbeans.lib.awtextra.AbsoluteConstraints(151, 199, 263, -1));
+        getContentPane().add(inputImporte, new org.netbeans.lib.awtextra.AbsoluteConstraints(144, 199, 270, -1));
 
         cbOpcionTipoPago.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Efectivo", "Tarjeta de crédito", "Tarjeta de débito", "Transferencia bancaria", "Yape / Plin / Billetera digital" }));
-        getContentPane().add(cbOpcionTipoPago, new org.netbeans.lib.awtextra.AbsoluteConstraints(149, 241, 265, -1));
+        getContentPane().add(cbOpcionTipoPago, new org.netbeans.lib.awtextra.AbsoluteConstraints(144, 241, 270, -1));
 
         btnAnularPago.setText("Anular pago");
-        getContentPane().add(btnAnularPago, new org.netbeans.lib.awtextra.AbsoluteConstraints(323, 335, 121, 30));
+        btnAnularPago.setIconTextGap(8);
+        getContentPane().add(btnAnularPago, new org.netbeans.lib.awtextra.AbsoluteConstraints(294, 325, 150, 40));
 
+        btnAgregarPago.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/circle-plus.png"))); // NOI18N
         btnAgregarPago.setText("Agregar pago");
-        getContentPane().add(btnAgregarPago, new org.netbeans.lib.awtextra.AbsoluteConstraints(284, 273, 130, 32));
-        getContentPane().add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 311, 450, 7));
+        btnAgregarPago.setIconTextGap(8);
+        getContentPane().add(btnAgregarPago, new org.netbeans.lib.awtextra.AbsoluteConstraints(254, 273, 160, 40));
+
+        jSeparator2.setBackground(new java.awt.Color(93, 29, 30));
+        jSeparator2.setForeground(new java.awt.Color(93, 29, 30));
+        getContentPane().add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 320, 450, 7));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

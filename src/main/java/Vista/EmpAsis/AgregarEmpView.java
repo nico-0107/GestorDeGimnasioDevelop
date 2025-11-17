@@ -4,6 +4,8 @@
  */
 package Vista.EmpAsis;
 
+import Style.Estilo;
+import java.awt.Color;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 
@@ -24,6 +26,7 @@ public class AgregarEmpView extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
         this.setIconImage(new ImageIcon(getClass().getResource("/Images/logopequeño.jpg")).getImage());
         this.setTitle("Gestión Gym Esparta");
+        Estilo.botonModerno(btnAgregar,   new Color(33, 150, 243));  // Azul moderno
     }
 
     /**
@@ -57,7 +60,7 @@ public class AgregarEmpView extends javax.swing.JFrame {
         jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("Nombre");
 
-        btnAgregar.setText("Agregar");
+        btnAgregar.setText("New");
         btnAgregar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAgregarActionPerformed(evt);

@@ -4,6 +4,8 @@
  */
 package Vista.MemHorario;
 
+import Style.Estilo;
+import java.awt.Color;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -28,6 +30,15 @@ public class HorariosMemView extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
         this.setIconImage(new ImageIcon(getClass().getResource("/Images/logopequeño.jpg")).getImage());
         this.setTitle("Gestión Gym Esparta");
+        
+        inicializarEstilo();
+    }
+    
+    private void inicializarEstilo(){
+        Estilo.tablaHeaderSecundario(tbHorarios);
+        Estilo.botonModerno(btnAgregarHorario,   new Color(33, 150, 243));  // Azul moderno
+        Estilo.botonModerno(btnEliminarHorario,  new Color(244, 67, 54));
+       
     }
 
     /**
@@ -79,9 +90,9 @@ public class HorariosMemView extends javax.swing.JFrame {
         jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("Hora fin");
 
-        btnAgregarHorario.setText("Agregar");
+        btnAgregarHorario.setText("New");
 
-        btnEliminarHorario.setText("Eliminar");
+        btnEliminarHorario.setText("Delete");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);

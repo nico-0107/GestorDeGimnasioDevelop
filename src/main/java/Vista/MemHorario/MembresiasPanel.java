@@ -4,6 +4,9 @@
  */
 package Vista.MemHorario;
 
+import Style.Estilo;
+import java.awt.Color;
+
 /**
  *
  * @author ARIAN BEJAR
@@ -15,6 +18,18 @@ public class MembresiasPanel extends javax.swing.JPanel {
      */
     public MembresiasPanel() {
         initComponents();
+        inicializarEstilo();
+    }
+    
+    private void inicializarEstilo(){
+        Estilo.textFieldModerno(inputBuscar);
+        Estilo.tablaHeaderModerno(tbMembresias);
+        Estilo.botonModerno(btnAgregar,   new Color(33, 150, 243));  // Azul moderno
+        Estilo.botonModerno(btnModificar, new Color(255, 152, 0));   // Naranja
+        Estilo.botonModerno(btnEliminar,  new Color(244, 67, 54));
+        Estilo.botonModerno(btnHabilitar,  new Color(76, 175, 80));
+        Estilo.botonModerno(btnDeshabilitar,  new Color(158, 158, 158));
+        Estilo.botonModerno(btnHorarios, new Color(0, 184, 148));
     }
 
     /**
@@ -37,13 +52,13 @@ public class MembresiasPanel extends javax.swing.JPanel {
         btnHorarios = new javax.swing.JButton();
         inputBuscar = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Century Gothic", 1, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel1.setFont(new java.awt.Font("Century Gothic", 1, 36)); // NOI18N
         jLabel1.setText("MEMBRESÍAS");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(42, 34, 172, 34));
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 30, 340, 34));
 
         tbMembresias.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -66,29 +81,35 @@ public class MembresiasPanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(tbMembresias);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(42, 176, 754, 477));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(42, 193, 754, 460));
 
-        btnAgregar.setText("Agregar");
-        add(btnAgregar, new org.netbeans.lib.awtextra.AbsoluteConstraints(42, 86, -1, -1));
+        btnAgregar.setText("New");
+        add(btnAgregar, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 80, 70, 40));
 
-        btnModificar.setText("Modificar");
-        add(btnModificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 86, -1, -1));
+        btnModificar.setText("Edit");
+        add(btnModificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 80, 70, 40));
 
-        btnEliminar.setText("Eliminar");
-        add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 86, -1, -1));
+        btnEliminar.setText("Delete");
+        add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 80, 90, 40));
 
         btnHabilitar.setText("Habilitar");
-        add(btnHabilitar, new org.netbeans.lib.awtextra.AbsoluteConstraints(326, 86, -1, -1));
+        add(btnHabilitar, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 80, 110, 40));
 
         btnDeshabilitar.setText("Deshabilitar");
-        add(btnDeshabilitar, new org.netbeans.lib.awtextra.AbsoluteConstraints(419, 86, -1, -1));
+        add(btnDeshabilitar, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 80, 140, 40));
 
+        btnHorarios.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/clipboard-clock.png"))); // NOI18N
         btnHorarios.setText("Horarios");
-        add(btnHorarios, new org.netbeans.lib.awtextra.AbsoluteConstraints(533, 86, -1, -1));
-        add(inputBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 130, 140, 30));
+        btnHorarios.setIconTextGap(8);
+        add(btnHorarios, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 140, 170, 40));
+        add(inputBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 150, 140, 30));
 
+        jLabel2.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
         jLabel2.setText("Buscar por nombre :");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 136, 120, 20));
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 150, 150, 20));
+
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/inputBuscar1.png"))); // NOI18N
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 140, 210, 50));
     }// </editor-fold>//GEN-END:initComponents
 
 
@@ -102,6 +123,7 @@ public class MembresiasPanel extends javax.swing.JPanel {
     public javax.swing.JTextField inputBuscar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;
     public javax.swing.JTable tbMembresias;
     // End of variables declaration//GEN-END:variables

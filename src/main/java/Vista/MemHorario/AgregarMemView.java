@@ -4,6 +4,8 @@
  */
 package Vista.MemHorario;
 
+import Style.Estilo;
+import java.awt.Color;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 
@@ -24,6 +26,7 @@ public class AgregarMemView extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
         this.setIconImage(new ImageIcon(getClass().getResource("/Images/logopequeño.jpg")).getImage());
         this.setTitle("Gestión Gym Esparta");
+        Estilo.botonModerno(btnAgregar,   new Color(33, 150, 243));
     }
 
     /**
@@ -75,8 +78,8 @@ public class AgregarMemView extends javax.swing.JFrame {
         jLabel6.setText("Días");
         getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 250, -1, -1));
 
-        btnAgregar.setText("Agregar");
-        getContentPane().add(btnAgregar, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 300, 124, 50));
+        btnAgregar.setText("New");
+        getContentPane().add(btnAgregar, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 300, 130, 50));
         getContentPane().add(inputNombreMem, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 60, 203, -1));
         getContentPane().add(inputPrecioMem, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 110, 203, -1));
 

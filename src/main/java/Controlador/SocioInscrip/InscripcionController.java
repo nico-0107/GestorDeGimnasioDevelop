@@ -159,7 +159,9 @@ public class InscripcionController {
         List<Membresia> lista = membresiaDAO.listar();
 
         for (Membresia m : lista) {
-            inscripcionView.cbOpcionMembresias.addItem(m);
+            if(m.getEstado().equalsIgnoreCase("Activa")){
+                inscripcionView.cbOpcionMembresias.addItem(m);
+            }
         }
 
         // Render: mostrar solo nombre en el ComboBox

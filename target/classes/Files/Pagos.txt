@@ -1,3 +1,2 @@
-PAG001;INS001;20.0;Efectivo;14/11/2025;anulado
-PAG002;INS001;20.0;Efectivo;14/11/2025;anulado
-PAG003;INS001;20.0;Efectivo;14/11/2025;efectuado
+PAG001;INS001;89.0;Efectivo;16/11/2025;efectuado
+PAG002;INS002;89.0;Efectivo;16/11/2025;efectuado

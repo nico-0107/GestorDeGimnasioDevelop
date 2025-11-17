@@ -4,12 +4,25 @@
  */
 package Vista.EmpAsis;
 
+import Style.Estilo;
+import java.awt.Color;
+
 public class EmpleadosPanel extends javax.swing.JPanel {
 
     public EmpleadosPanel() {
         initComponents(); 
+        inicializarEstilo();
     }
-
+    
+    private void inicializarEstilo(){
+        Estilo.textFieldModerno(inputBuscar);
+        Estilo.tablaHeaderModerno(tbEmpleados);
+        Estilo.botonModerno(btnAgregar,   new Color(33, 150, 243));  // Azul moderno
+        Estilo.botonModerno(btnModificar, new Color(255, 152, 0));   // Naranja
+        Estilo.botonModerno(btnEliminar,  new Color(244, 67, 54));
+        Estilo.botonModerno(btnRegistrarAsis, new Color(0, 184, 148));
+    }
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -23,18 +36,17 @@ public class EmpleadosPanel extends javax.swing.JPanel {
         btnAgregar = new javax.swing.JButton();
         btnEliminar = new javax.swing.JButton();
         btnModificar = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
         inputBuscar = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
 
         jButton2.setText("jButton1");
 
         setPreferredSize(new java.awt.Dimension(836, 680));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        lblUsuarios.setFont(new java.awt.Font("Century Gothic", 1, 24)); // NOI18N
-        lblUsuarios.setForeground(new java.awt.Color(0, 0, 0));
+        lblUsuarios.setFont(new java.awt.Font("Century Gothic", 1, 36)); // NOI18N
         lblUsuarios.setText("EMPLEADOS DEL GIMNASIO");
-        add(lblUsuarios, new org.netbeans.lib.awtextra.AbsoluteConstraints(29, 47, -1, -1));
+        add(lblUsuarios, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 50, 540, -1));
 
         tbEmpleados.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         tbEmpleados.setModel(new javax.swing.table.DefaultTableModel(
@@ -106,21 +118,23 @@ public class EmpleadosPanel extends javax.swing.JPanel {
 
         add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(29, 196, 783, 360));
 
+        btnRegistrarAsis.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/contact-round.png"))); // NOI18N
         btnRegistrarAsis.setText("Registrar Asistencia");
-        add(btnRegistrarAsis, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 100, -1, -1));
+        btnRegistrarAsis.setIconTextGap(8);
+        add(btnRegistrarAsis, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 140, 220, 40));
 
-        btnAgregar.setText("Agregar");
-        add(btnAgregar, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, 130, -1));
+        btnAgregar.setText("New");
+        add(btnAgregar, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 140, 80, 40));
 
-        btnEliminar.setText("Eliminar");
-        add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 100, 120, -1));
+        btnEliminar.setText("Delete");
+        add(btnEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 140, 80, 40));
 
-        btnModificar.setText("Modificar");
-        add(btnModificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 100, 120, -1));
+        btnModificar.setText("Edit");
+        add(btnModificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 140, 80, 40));
+        add(inputBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 150, 140, 30));
 
-        jLabel1.setText("Buscar por dni: ");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 150, -1, -1));
-        add(inputBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 140, 190, 30));
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/inputBuscar1.png"))); // NOI18N
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, 210, 50));
     }// </editor-fold>//GEN-END:initComponents
 
 
@@ -132,7 +146,7 @@ public class EmpleadosPanel extends javax.swing.JPanel {
     public javax.swing.JTextField inputBuscar;
     private javax.swing.JButton jButton2;
     private com.toedter.calendar.JDayChooser jDayChooser1;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblUsuarios;
     public javax.swing.JTable tbEmpleados;

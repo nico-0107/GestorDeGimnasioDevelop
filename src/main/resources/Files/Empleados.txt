@@ -2,4 +2,3 @@ EMP001;74851236;María;Rojas;Recepcionista;1800.0
 EMP002;73215489;Luis;Vargas;Conserje;1500.0
 EMP003;74896512;Dayana;Mendoza;Administradora;2000.0
 EMP004;72984512;Jorge;Quispe;Limpieza;1200.0
-EMP005;71283078;aagsdf;dfgdfg;fhfdh;1234.0

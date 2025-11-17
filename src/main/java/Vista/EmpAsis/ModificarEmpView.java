@@ -4,6 +4,8 @@
  */
 package Vista.EmpAsis;
 
+import Style.Estilo;
+import java.awt.Color;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 
@@ -22,6 +24,7 @@ public class ModificarEmpView extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
         this.setIconImage(new ImageIcon(getClass().getResource("/Images/logopequeño.jpg")).getImage());
         this.setTitle("Gestión Gym Esparta");
+        Estilo.botonModerno(btnModificar, new Color(255, 152, 0));   // Naranja
     }
 
     /**
@@ -71,7 +74,7 @@ public class ModificarEmpView extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
         jLabel4.setText("Cargo");
 
-        btnModificar.setText("Modificar");
+        btnModificar.setText("Edit");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);

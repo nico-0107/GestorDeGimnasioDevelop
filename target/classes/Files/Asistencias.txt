@@ -4,3 +4,4 @@ ASI004;EMP001;12:01 a. m.;12:01 a. m.;31/10/2025
 ASI005;EMP003;12:02 a. m.;12:02 a. m.;31/10/2025
 ASI006;EMP004;12:02 a. m.;12:02 a. m.;31/10/2025
 ASI007;EMP004;06:51 p. m.;Hora no registrada;14/11/2025
+ASI008;EMP004;07:50 p. m.;Hora no registrada;16/11/2025

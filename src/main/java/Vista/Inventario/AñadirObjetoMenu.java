@@ -6,6 +6,8 @@ package Vista.Inventario;
   
 import Modelo.ListaObjetos;
 import Modelo.Objeto;
+import Style.Estilo;
+import java.awt.Color;
 import javax.swing.JDialog;
 import javax.swing.JOptionPane;
 
@@ -21,8 +23,12 @@ public class AñadirObjetoMenu extends javax.swing.JPanel {
     public AñadirObjetoMenu(JDialog dialog) {
         this.dialog = dialog;
         this.listaObjetos = new ListaObjetos();
+        setSize(458, 328);
         initComponents();
         addListeners();
+        
+        Estilo.botonModerno(Añadir,   new Color(33, 150, 243));  // Azul moderno
+        Estilo.botonModerno(cancelar,  new Color(244, 67, 54));   // Naranja
     }
     private void addListeners() {
         Añadir.addActionListener(e -> registrarObjeto());
@@ -68,29 +74,39 @@ public class AñadirObjetoMenu extends javax.swing.JPanel {
         TipoDeMaquina = new javax.swing.JComboBox<>();
         TipoDeEstado = new javax.swing.JComboBox<>();
 
+        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel1.setText("N.Serie");
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, -1, 30));
 
-        lblUsuarios.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        lblUsuarios.setText("Agregar a Inventario");
+        lblUsuarios.setFont(new java.awt.Font("Century Gothic", 1, 24)); // NOI18N
+        lblUsuarios.setText("AGREGAR IMPLEMENTO");
+        add(lblUsuarios, new org.netbeans.lib.awtextra.AbsoluteConstraints(86, 14, -1, 40));
 
         escribirNSerie.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 escribirNSerieActionPerformed(evt);
             }
         });
+        add(escribirNSerie, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 80, 350, 30));
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel2.setText("Nombre");
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, -1, -1));
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel3.setText("Tipo");
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, -1, -1));
+        add(escribirNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 124, 350, 30));
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel5.setText("Estado");
+        add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, -1, -1));
 
-        Añadir.setText("Añadir");
+        Añadir.setText("New");
         Añadir.setFocusPainted(false);
+        add(Añadir, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 280, 144, 41));
 
         cancelar.setBackground(new java.awt.Color(255, 204, 204));
         cancelar.setText("Cancelar");
@@ -100,6 +116,7 @@ public class AñadirObjetoMenu extends javax.swing.JPanel {
                 cancelarActionPerformed(evt);
             }
         });
+        add(cancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 280, 136, 41));
 
         TipoDeMaquina.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Máquina", "Disco", "Mancuerna" }));
         TipoDeMaquina.addActionListener(new java.awt.event.ActionListener() {
@@ -107,6 +124,7 @@ public class AñadirObjetoMenu extends javax.swing.JPanel {
                 TipoDeMaquinaActionPerformed(evt);
             }
         });
+        add(TipoDeMaquina, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 170, 110, 30));
 
         TipoDeEstado.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Activo", "En Mantenimiento", "En Desuso" }));
         TipoDeEstado.addActionListener(new java.awt.event.ActionListener() {
@@ -114,64 +132,7 @@ public class AñadirObjetoMenu extends javax.swing.JPanel {
                 TipoDeEstadoActionPerformed(evt);
             }
         });
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(cancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(Añadir, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel5))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(TipoDeEstado, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(TipoDeMaquina, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(escribirNSerie, javax.swing.GroupLayout.DEFAULT_SIZE, 363, Short.MAX_VALUE)
-                                .addComponent(escribirNombre)))))
-                .addContainerGap(29, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(124, Short.MAX_VALUE)
-                .addComponent(lblUsuarios)
-                .addGap(116, 116, 116))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(14, 14, 14)
-                .addComponent(lblUsuarios, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(escribirNSerie, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(escribirNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(TipoDeMaquina, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
-                    .addComponent(TipoDeEstado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 106, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Añadir)
-                    .addComponent(cancelar))
-                .addGap(19, 19, 19))
-        );
+        add(TipoDeEstado, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 210, 110, 30));
     }// </editor-fold>//GEN-END:initComponents
 
     private void escribirNSerieActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_escribirNSerieActionPerformed
